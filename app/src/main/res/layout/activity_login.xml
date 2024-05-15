@@ -30,6 +30,7 @@
                     android:hint="@string/email"
                     android:drawableStart="@drawable/baseline_account_circle_24"
                     android:drawablePadding="8dp"
+                    android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
                     android:autofillHints="emailAddress"
                     android:inputType="textEmailAddress" />
@@ -43,6 +44,7 @@
                     android:hint="@string/kata_sandi"
                     android:drawableStart="@drawable/baseline_edit_24"
                     android:drawablePadding="8dp"
+                    android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
                     android:autofillHints="password"
                     android:inputType="textPassword" />
@@ -50,6 +52,7 @@
                     android:layout_width="350dp"
                     android:layout_height="65dp"
                     android:layout_marginTop="30dp"
+                    android:fontFamily="@font/poppins"
                     android:text="@string/masuk"
                     android:id="@+id/login_button"
                     android:textSize="18sp"
