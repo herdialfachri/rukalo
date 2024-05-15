@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.ProfileFragment">
+
+    <!--text profil-->
+    <TextView
+        android:id="@+id/tv_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/profil_tv"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--text profil-->
+
+    <!--text seputar aplikasi-->
+    <TextView
+        android:id="@+id/tv_about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/seputar_aplikasi"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_profile"
+        app:layout_constraintTop_toBottomOf="@+id/tv_profile" />
+
+    <!--awal_hubungi_desa-->
+    <Button
+        android:id="@+id/btn_hubungi_desa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/button_outline"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_about" />
+
+    <ImageView
+        android:id="@+id/iv_hubungi_desa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:contentDescription="@string/gambar_pesan"
+        android:src="@drawable/baseline_chat_24"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_hubungi_desa"
+        app:layout_constraintStart_toStartOf="@+id/btn_hubungi_desa"
+        app:layout_constraintTop_toTopOf="@+id/btn_hubungi_desa" />
+
+    <TextView
+        android:id="@+id/tv_hubungi_desa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/hubungi_desa_palasari_girang"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/iv_hubungi_desa"
+        app:layout_constraintTop_toTopOf="@+id/iv_hubungi_desa" />
+
+    <TextView
+        android:id="@+id/tv2_hubungi_desa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/sosial_media"
+        android:textSize="10sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_hubungi_desa"
+        app:layout_constraintStart_toEndOf="@+id/iv_hubungi_desa"
+        app:layout_constraintTop_toTopOf="@+id/iv_hubungi_desa" />
+
+    <ImageView
+        android:id="@+id/btn_enter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/gambar_arrow"
+        android:src="@drawable/baseline_arrow_forward_ios_24"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_hubungi_desa"
+        app:layout_constraintEnd_toEndOf="@+id/btn_hubungi_desa"
+        app:layout_constraintTop_toTopOf="@+id/btn_hubungi_desa" />
+    <!--akhir_hubungi_desa-->
+
+    <!--awal cara pakai apk-->
+    <ImageView
+        android:id="@+id/iv_tentang_aplikasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:contentDescription="@string/gambar_tanda_tanya"
+        android:src="@drawable/baseline_contact_support_24"
+        app:layout_constraintBottom_toBottomOf="@+id/button_tentang_aplikasi"
+        app:layout_constraintStart_toStartOf="@+id/button_tentang_aplikasi"
+        app:layout_constraintTop_toTopOf="@+id/button_tentang_aplikasi" />
+
+    <TextView
+        android:id="@+id/tv_tentang_rukalo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/poppins"
+        android:text="Cara Menggunakan Aplikasi"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/iv_tentang_aplikasi"
+        app:layout_constraintTop_toTopOf="@+id/iv_tentang_aplikasi" />
+
+    <TextView
+        android:id="@+id/tv2_tentang_rukalo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins"
+        android:text="Cara mendaftar, cara membeli, cara masuk"
+        android:textSize="10sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_tentang_aplikasi"
+        app:layout_constraintStart_toEndOf="@+id/iv_tentang_aplikasi"
+        app:layout_constraintTop_toTopOf="@+id/iv_tentang_aplikasi" />
+
+    <Button
+        android:id="@+id/button_tentang_aplikasi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/button_outline"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_hubungi_desa" />
+
+    <ImageView
+        android:id="@+id/btn_enter_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/baseline_arrow_forward_ios_24"
+        app:layout_constraintBottom_toBottomOf="@+id/button_tentang_aplikasi"
+        app:layout_constraintEnd_toEndOf="@+id/button_tentang_aplikasi"
+        app:layout_constraintTop_toTopOf="@+id/button_tentang_aplikasi" />
+    <!--akhir cara pakai apk-->
+
+    <!--awal hak cipta-->
+    <ImageView
+        android:id="@+id/iv_hak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:src="@drawable/baseline_hak_settings_24"
+        app:layout_constraintBottom_toBottomOf="@+id/button_hak_cipta"
+        app:layout_constraintStart_toStartOf="@+id/button_hak_cipta"
+        app:layout_constraintTop_toTopOf="@+id/button_hak_cipta" />
+
+    <TextView
+        android:id="@+id/tv_hak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/poppins"
+        android:text="Hak Cipta Aplikasi"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/iv_hak"
+        app:layout_constraintTop_toTopOf="@+id/iv_hak" />
+
+    <TextView
+        android:id="@+id/tv2_hak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins"
+        android:text="Nomor Haki, Status Pendaftaran Hak Cipta"
+        android:textSize="10sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_hak"
+        app:layout_constraintStart_toEndOf="@+id/iv_hak"
+        app:layout_constraintTop_toTopOf="@+id/iv_hak" />
+
+    <Button
+        android:id="@+id/button_hak_cipta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/button_outline"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_tentang_aplikasi" />
+
+    <ImageView
+        android:id="@+id/btn_enter_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/baseline_arrow_forward_ios_24"
+        app:layout_constraintBottom_toBottomOf="@+id/button_hak_cipta"
+        app:layout_constraintEnd_toEndOf="@+id/button_hak_cipta"
+        app:layout_constraintTop_toTopOf="@+id/button_hak_cipta" />
+    <!--akhir cara pakai apk-->
+
+    <!--awal informasi 2-->
+    <TextView
+        android:id="@+id/tv2_about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/poppins"
+        android:text="Informasi Lainnya"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_hak_cipta" />
+
+    <!--awal cara undang teman-->
+    <ImageView
+        android:id="@+id/iv_undang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:src="@drawable/baseline_add_reaction_24"
+        app:layout_constraintBottom_toBottomOf="@+id/button_undang"
+        app:layout_constraintStart_toStartOf="@+id/button_undang"
+        app:layout_constraintTop_toTopOf="@+id/button_undang" />
+
+    <TextView
+        android:id="@+id/tv_undang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/poppins"
+        android:text="Undang Teman"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/iv_undang"
+        app:layout_constraintTop_toTopOf="@+id/iv_undang" />
+
+    <TextView
+        android:id="@+id/tv2_undang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins"
+        android:text="Cara mengundang teman"
+        android:textSize="10sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_undang"
+        app:layout_constraintStart_toEndOf="@+id/iv_undang"
+        app:layout_constraintTop_toTopOf="@+id/iv_undang" />
+
+    <Button
+        android:id="@+id/button_undang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/button_outline"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv2_about" />
+
+    <ImageView
+        android:id="@+id/btn_enter_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/baseline_arrow_forward_ios_24"
+        app:layout_constraintBottom_toBottomOf="@+id/button_undang"
+        app:layout_constraintEnd_toEndOf="@+id/button_undang"
+        app:layout_constraintTop_toTopOf="@+id/button_undang" />
+    <!--akhir awal cara undang teman-->
+
+    <!--awal tentang rukalo-->
+    <Button
+        android:id="@+id/btn_tentang_aplikasi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/button_outline"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_undang" />
+
+    <TextView
+        android:id="@+id/tv_tentang_aplikasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/poppins"
+        android:text="Tentang Aplikasi Rukalo"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_tentang_aplikasi"
+        app:layout_constraintStart_toStartOf="@+id/btn_tentang_aplikasi"
+        app:layout_constraintTop_toTopOf="@+id/btn_tentang_aplikasi" />
+
+    <ImageView
+        android:id="@+id/btn_enter_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/baseline_arrow_forward_ios_24"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_tentang_aplikasi"
+        app:layout_constraintEnd_toEndOf="@+id/btn_tentang_aplikasi"
+        app:layout_constraintTop_toTopOf="@+id/btn_tentang_aplikasi" />
+    <!--akhir awal cara undang teman-->
+
+    <!--button daftar-->
+    <Button
+        android:id="@+id/btn_masuk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:textStyle="bold"
+        android:text="@string/masuk"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_tentang_aplikasi" />
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="16sp"
+        android:text="@string/keluar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_masuk" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

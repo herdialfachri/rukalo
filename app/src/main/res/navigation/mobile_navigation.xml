@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.herdialfachri.rukaloumkm.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_resep"
+            app:destination="@id/navigation_resep" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_profil"
+            app:destination="@id/navigation_profil" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_resep"
+        android:name="com.herdialfachri.rukaloumkm.ui.dashboard.DashboardFragment"
+        android:label="@string/title_resep"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_profil"
+        android:name="com.herdialfachri.rukaloumkm.ui.profile.ProfileFragment"
+        android:label="@string/title_profil"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_navigation_profil_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_navigation_profil_to_kontakFragment"
+            app:destination="@id/kontakFragment" />
+        <action
+            android:id="@+id/action_navigation_profil_to_registerActivity"
+            app:destination="@id/registerActivity" />
+        <action
+            android:id="@+id/action_navigation_profil_to_shareFragment"
+            app:destination="@id/shareFragment" />
+        <action
+            android:id="@+id/action_navigation_profil_to_loginActivity"
+            app:destination="@id/loginActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.herdialfachri.rukaloumkm.ui.profile.tentang.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/kontakFragment"
+        android:name="com.herdialfachri.rukaloumkm.ui.profile.kontak.KontakFragment"
+        android:label="fragment_kontak"
+        tools:layout="@layout/fragment_kontak" />
+    <activity
+        android:id="@+id/registerActivity"
+        android:name="com.herdialfachri.rukaloumkm.login.RegisterActivity"
+        android:label="activity_register"
+        tools:layout="@layout/activity_register" />
+    <fragment
+        android:id="@+id/shareFragment"
+        android:name="com.herdialfachri.rukaloumkm.ui.profile.undang.ShareFragment"
+        android:label="fragment_share"
+        tools:layout="@layout/fragment_share" />
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.herdialfachri.rukaloumkm.login.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
+</navigation>

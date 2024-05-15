@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.kontak.KontakFragment">
+
+    <!--text contact-->
+    <TextView
+        android:id="@+id/tv_sosmed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/hubungi_kami"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--text sosmed-->
+    <TextView
+        android:id="@+id/tv_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/sosmed"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_whatsapp" />
+
+    <Button
+        android:id="@+id/btn_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/button_outline"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_sosmed"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sosmed" />
+
+    <ImageView
+        android:id="@+id/iv_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:src="@drawable/baseline_chat_24"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_email"
+        app:layout_constraintStart_toStartOf="@+id/btn_email"
+        app:layout_constraintTop_toTopOf="@+id/btn_email"
+        android:contentDescription="@string/gambar_pesan" />
+
+    <TextView
+        android:id="@+id/tv_nama_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/email"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_email"
+        app:layout_constraintStart_toEndOf="@+id/iv_email"
+        app:layout_constraintTop_toTopOf="@+id/iv_email" />
+
+    <ImageView
+        android:id="@+id/btn_enter_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/baseline_arrow_forward_ios_24"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_email"
+        app:layout_constraintEnd_toEndOf="@+id/btn_email"
+        app:layout_constraintTop_toTopOf="@+id/btn_email"
+        android:contentDescription="@string/gambar_arrow" />
+    <!--akhir email-->
+
+    <!--awal whatsapp-->
+    <Button
+        android:id="@+id/btn_whatsapp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/button_outline"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_sosmed"
+        app:layout_constraintTop_toBottomOf="@+id/btn_email" />
+
+    <ImageView
+        android:id="@+id/iv_whatsapp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:src="@drawable/baseline_call_24"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_whatsapp"
+        app:layout_constraintStart_toStartOf="@+id/btn_whatsapp"
+        app:layout_constraintTop_toTopOf="@+id/btn_whatsapp"
+        android:contentDescription="@string/gambar_pesan" />
+
+    <TextView
+        android:id="@+id/tv_nama_whatsapp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/whatsapp"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_whatsapp"
+        app:layout_constraintStart_toEndOf="@+id/iv_whatsapp"
+        app:layout_constraintTop_toTopOf="@+id/iv_whatsapp" />
+
+    <ImageView
+        android:id="@+id/btn_enter_whatsapp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/baseline_arrow_forward_ios_24"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_whatsapp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_whatsapp"
+        app:layout_constraintTop_toTopOf="@+id/btn_whatsapp"
+        android:contentDescription="@string/gambar_arrow" />
+
+    <!--awal website-->
+    <Button
+        android:id="@+id/btn_website"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/button_outline"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_contact" />
+
+    <ImageView
+        android:id="@+id/iv_website"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:contentDescription="@string/gambar_pesan"
+        android:src="@drawable/baseline_filter_drama_24"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_website"
+        app:layout_constraintStart_toStartOf="@+id/btn_website"
+        app:layout_constraintTop_toTopOf="@+id/btn_website" />
+
+    <TextView
+        android:id="@+id/tv_nama_website"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/website"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_website"
+        app:layout_constraintStart_toEndOf="@+id/iv_website"
+        app:layout_constraintTop_toTopOf="@+id/iv_website" />
+
+    <ImageView
+        android:id="@+id/btn_enter_website"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/gambar_arrow"
+        android:src="@drawable/baseline_arrow_forward_ios_24"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_website"
+        app:layout_constraintEnd_toEndOf="@+id/btn_website"
+        app:layout_constraintTop_toTopOf="@+id/btn_website" />
+
+    <!--awal facebook-->
+
+    <Button
+        android:id="@+id/btn_facebook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/button_outline"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_website" />
+
+    <ImageView
+        android:id="@+id/iv_facebook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:contentDescription="@string/gambar_pesan"
+        android:src="@drawable/baseline_filter_drama_24"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_facebook"
+        app:layout_constraintStart_toStartOf="@+id/btn_facebook"
+        app:layout_constraintTop_toTopOf="@+id/btn_facebook" />
+
+    <TextView
+        android:id="@+id/tv_nama_facebook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/facebook"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_facebook"
+        app:layout_constraintStart_toEndOf="@+id/iv_facebook"
+        app:layout_constraintTop_toTopOf="@+id/iv_facebook" />
+
+    <ImageView
+        android:id="@+id/btn_enter_facebook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/gambar_arrow"
+        android:src="@drawable/baseline_arrow_forward_ios_24"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_facebook"
+        app:layout_constraintEnd_toEndOf="@+id/btn_facebook"
+        app:layout_constraintTop_toTopOf="@+id/btn_facebook" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

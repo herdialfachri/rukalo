@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Rukalo</string>
+    <string name="title_home">Home</string>
+    <string name="title_resep">Resep</string>
+    <string name="title_cari">Cari</string>
+    <string name="title_profil">Profil</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="selamat_datang">Selamat Datang</string>
+    <string name="test">test</string>
+    <string name="profil_tv">Profile</string>
+    <string name="masuk_akun">Masuk akun</string>
+    <string name="seputar_aplikasi">Seputar Aplikasi</string>
+    <string name="hubungi_desa_palasari_girang">Hubungi Desa Palasari Girang</string>
+    <string name="sosial_media">Email, Whatsapp, Wesbite</string>
+    <string name="gambar_pesan">gambar pesan</string>
+    <string name="gambar_arrow">gambar arrow</string>
+    <string name="gambar_tanda_tanya">gambar tanda tanya</string>
+    <string name="rukalo">Rukalo</string>
+    <string name="versi">Versi 1.0</string>
+    <string name="tentang_kami">Tentang Kami</string>
+    <string name="isi_aplikasi_rukalo">Aplikasi Rukalo adalah sebuah platform digital yang dirancang khusus untuk membantu pelaku Usaha Mikro, Kecil, dan Menengah (UMKM) dalam mengelola dan memasarkan produk-produk mereka secara efektif. Dengan menggunakan Rukalo, pengguna dapat memanfaatkan berbagai fitur yang mendukung dalam meningkatkan visibilitas dan penjualan produk UMKM mereka. Salah satu fitur utama dari Aplikasi Rukalo adalah kemampuannya dalam pemasaran produk. Melalui platform ini, para pemilik UMKM dapat mempromosikan produk mereka kepada target pasar yang tepat, meningkatkan eksposur, dan mengoptimalkan strategi pemasaran untuk mencapai hasil yang lebih baik.</string>
+    <string name="hubungi_kami">Hubungi Kami</string>
+    <string name="email">Email</string>
+    <string name="website">Website</string>
+    <string name="daftar_sekarang">Daftar sekarang</string>
+    <string name="masuk">Masuk</string>
+    <string name="keluar">Keluar</string>
+    <string name="whatsapp">Whatsapp</string>
+    <string name="sosmed">Sosial Media</string>
+    <string name="facebook">Facebook</string>
+    <string name="halo_foodies">Halo Foodies!</string>
+    <string name="share_desc">Ayo bagiin aplikasi Rukalo ke temen kamu dengan mengklik tombol dibawah!</string>
+    <string name="foto_bagikan_aplikasi">foto bagikan aplikasi</string>
+    <string name="share">Bagikan</string>
+    <string name="seller">Apakah kamu penjual? Daftar</string>
+    <string name="lupa_kata_sandi">Lupa Kata Sandi?</string>
+    <string name="kata_sandi">Kata Sandi</string>
+</resources>
