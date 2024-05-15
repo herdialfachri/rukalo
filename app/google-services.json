@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "581491689718",
+    "project_id": "rukalo-umkm",
+    "storage_bucket": "rukalo-umkm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:581491689718:android:7651926994793658bdc4d7",
+        "android_client_info": {
+          "package_name": "com.herdialfachri.rukaloumkm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxI3zRyUEe9nbmznQHO5E8qV6sN0hrgXU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
