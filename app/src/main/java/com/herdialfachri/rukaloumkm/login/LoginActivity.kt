@@ -6,8 +6,10 @@ import android.net.Uri
 import android.os.Bundle
 import android.text.method.PasswordTransformationMethod
 import android.util.Patterns
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +20,7 @@ import com.herdialfachri.rukaloumkm.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
 
+    private lateinit var loadingProgressBar: ProgressBar
     private lateinit var binding: ActivityLoginBinding
     private lateinit var firebaseAuth: FirebaseAuth
 
@@ -26,6 +29,7 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        loadingProgressBar = findViewById(R.id.loadingProgressBar)
         val passwordEditText = binding.loginPassword
         passwordEditText.transformationMethod = PasswordTransformationMethod.getInstance()
 
@@ -105,8 +109,10 @@ class LoginActivity : AppCompatActivity() {
             val email = binding.loginEmail.text.toString()
             val password = binding.loginPassword.text.toString()
             if (email.isNotEmpty() && password.isNotEmpty()) {
+                loadingProgressBar.visibility = View.VISIBLE
                 firebaseAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener { task ->
+                        loadingProgressBar.visibility = View.GONE
                         if (task.isSuccessful) {
                             val currentUserEmail = firebaseAuth.currentUser?.email
                             Toast.makeText(
@@ -116,7 +122,8 @@ class LoginActivity : AppCompatActivity() {
                             ).show()
 
                             val intent = Intent(this, MainActivity::class.java).apply {
-                                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                                flags =
+                                    Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                             }
                             startActivity(intent)
                             finish()

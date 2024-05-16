@@ -11,9 +11,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.herdialfachri.rukaloumkm.MainActivity
 import com.herdialfachri.rukaloumkm.R
 import com.herdialfachri.rukaloumkm.databinding.FragmentProfileBinding
-import com.herdialfachri.rukaloumkm.login.LoginActivity
 
 class ProfileFragment : Fragment() {
 
@@ -34,7 +34,7 @@ class ProfileFragment : Fragment() {
         val logoutButton = view.findViewById<Button>(R.id.btn_logout)
         logoutButton.setOnClickListener {
             firebaseAuth.signOut()
-            val intent = Intent(activity, LoginActivity::class.java)
+            val intent = Intent(activity, MainActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }
