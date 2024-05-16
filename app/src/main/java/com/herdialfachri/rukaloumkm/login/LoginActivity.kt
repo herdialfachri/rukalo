@@ -119,8 +119,12 @@ class LoginActivity : AppCompatActivity() {
                             startActivity(intent)
                             finish() // Tutup LoginActivity setelah berhasil masuk
                         } else {
-                            Toast.makeText(this, task.exception.toString(), Toast.LENGTH_SHORT)
-                                .show()
+                            // Tampilkan pesan kesalahan khusus jika email atau password salah
+                            Toast.makeText(
+                                this,
+                                "Maaf kata sandi atau password salah",
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
                     }
             } else {

@@ -33,7 +33,11 @@
     <string name="share_desc">Ayo bagiin aplikasi Rukalo ke temen kamu dengan mengklik tombol dibawah!</string>
     <string name="foto_bagikan_aplikasi">foto bagikan aplikasi</string>
     <string name="share">Bagikan</string>
-    <string name="seller">Apakah kamu penjual? Daftar</string>
+    <string name="seller">Apa kamu penjual? Daftar</string>
     <string name="lupa_kata_sandi">Lupa Kata Sandi?</string>
     <string name="kata_sandi">Kata Sandi</string>
+    <string name="welcome_to_rukalo">Welcome to Rukalo!</string>
+    <string name="desc_lengkap">Ayo temukan dan tentukan makanan favoritmu. Kami akan selalu membantumu kapanpun dan dimanapun!</string>
+    <string name="gambar_logo_rukalo">gambar logo rukalo</string>
+    <string name="gambar_slider">gambar slider</string>
 </resources>

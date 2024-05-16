@@ -91,6 +91,7 @@ class ProfileFragment : Fragment() {
         super.onDestroy()
         _binding = null
     }
+
     private fun showToast(message: String) {
         Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
