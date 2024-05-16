@@ -40,8 +40,11 @@ class LoginActivity : AppCompatActivity() {
             builder.setView(view)
             val dialog = builder.create()
             view.findViewById<Button>(R.id.btnReset).setOnClickListener {
-                compareEmail(userEmail)
-                dialog.dismiss()
+                if (userEmail.text.toString().isEmpty()) {
+                    Toast.makeText(this, "Silakan masukan email anda", Toast.LENGTH_SHORT).show()
+                } else {
+                    compareEmail(userEmail, dialog)
+                }
             }
             view.findViewById<Button>(R.id.btnCancel).setOnClickListener {
                 dialog.dismiss()
@@ -53,8 +56,6 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.signupRedirectText.setOnClickListener {
-//            val signupIntent = Intent(this, RegisterActivity::class.java)
-//            startActivity(signupIntent)
             val phoneWhatsapp = "6282122506110"
             val dialWhatsappIntent = Intent(
                 Intent.ACTION_VIEW,
@@ -67,20 +68,17 @@ class LoginActivity : AppCompatActivity() {
     private fun checkUserLoggedIn() {
         val currentUser = firebaseAuth.currentUser
         if (currentUser != null) {
-            // Jika pengguna sudah masuk sebelumnya, langsung arahkan ke MainActivity
             val intent = Intent(this, MainActivity::class.java).apply {
                 flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             }
             startActivity(intent)
-            finish() // Tutup LoginActivity agar tidak bisa kembali lagi saat tombol back ditekan di MainActivity
+            finish()
         }
     }
 
-    private fun compareEmail(email: EditText) {
-        if (email.text.toString().isEmpty()) {
-            return
-        }
+    private fun compareEmail(email: EditText, dialog: AlertDialog) {
         if (!Patterns.EMAIL_ADDRESS.matcher(email.text.toString()).matches()) {
+            Toast.makeText(this, "Masukan email yang valid", Toast.LENGTH_SHORT).show()
             return
         }
         firebaseAuth.sendPasswordResetEmail(email.text.toString())
@@ -89,6 +87,13 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(
                         this,
                         "Reset kata sandi berhasil, cek email anda",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    dialog.dismiss()
+                } else {
+                    Toast.makeText(
+                        this,
+                        "Gagal mengirim email reset, coba lagi",
                         Toast.LENGTH_SHORT
                     ).show()
                 }
@@ -103,9 +108,7 @@ class LoginActivity : AppCompatActivity() {
                 firebaseAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
-                            // Get current user email
                             val currentUserEmail = firebaseAuth.currentUser?.email
-                            // Show the email in a toast message
                             Toast.makeText(
                                 this,
                                 "Anda masuk sebagai $currentUserEmail",
@@ -113,13 +116,11 @@ class LoginActivity : AppCompatActivity() {
                             ).show()
 
                             val intent = Intent(this, MainActivity::class.java).apply {
-                                flags =
-                                    Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                             }
                             startActivity(intent)
-                            finish() // Tutup LoginActivity setelah berhasil masuk
+                            finish()
                         } else {
-                            // Tampilkan pesan kesalahan khusus jika email atau password salah
                             Toast.makeText(
                                 this,
                                 "Maaf kata sandi atau password salah",

@@ -40,4 +40,10 @@
     <string name="desc_lengkap">Ayo temukan dan tentukan makanan favoritmu. Kami akan selalu membantumu kapanpun dan dimanapun!</string>
     <string name="gambar_logo_rukalo">gambar logo rukalo</string>
     <string name="gambar_slider">gambar slider</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="reset_kata_sandi">Reset kata sandi</string>
+    <string name="enter_email">Masukkan email yang terdaftar</string>
+    <string name="kembali">kembali</string>
+    <string name="reset">Reset</string>
+    <string name="gambar_splash_screen">gambar splash screen</string>
 </resources>
