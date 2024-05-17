@@ -2,10 +2,13 @@ package com.herdialfachri.rukaloumkm.ui.profile
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
@@ -32,12 +35,18 @@ class ProfileFragment : Fragment() {
         firebaseAuth = FirebaseAuth.getInstance()
 
         val logoutButton = view.findViewById<Button>(R.id.btn_logout)
+        val loadingKeluar = view.findViewById<ProgressBar>(R.id.loadingKeluar)
+
         logoutButton.setOnClickListener {
-            firebaseAuth.signOut()
-            val intent = Intent(activity, MainActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            startActivity(intent)
+            loadingKeluar.visibility = View.VISIBLE
+            Handler(Looper.getMainLooper()).postDelayed({
+                firebaseAuth.signOut()
+                val intent = Intent(activity, MainActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+            }, 1300) // 1.3 detik
         }
+
         if (firebaseAuth.currentUser == null) {
             logoutButton.visibility = View.GONE
         }

@@ -130,7 +130,7 @@ class LoginActivity : AppCompatActivity() {
                         } else {
                             Toast.makeText(
                                 this,
-                                "Maaf kata sandi atau password salah",
+                                "Maaf email atau password yang anda masukan salah",
                                 Toast.LENGTH_SHORT
                             ).show()
                         }

@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/splash_image"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
         android:contentDescription="@string/gambar_splash_screen"
         android:src="@drawable/splashscreen"
         app:layout_constraintBottom_toBottomOf="parent"
