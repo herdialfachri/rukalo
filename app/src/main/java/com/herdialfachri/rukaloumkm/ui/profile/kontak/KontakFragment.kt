@@ -8,10 +8,20 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.Button
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.herdialfachri.rukaloumkm.R
 
 class KontakFragment : Fragment(), View.OnClickListener {
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_kontak, container, false)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -27,14 +37,12 @@ class KontakFragment : Fragment(), View.OnClickListener {
 
         val facebook: Button = view.findViewById(R.id.btn_facebook)
         facebook.setOnClickListener(this)
-    }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_kontak, container, false)
+        // Mendapatkan referensi ke toolbar
+        val toolbar: Toolbar = view.findViewById(R.id.toolbar_kontak)
+        toolbar.setNavigationOnClickListener {
+            findNavController().navigateUp()
+        }
     }
 
     override fun onClick(v: View) {

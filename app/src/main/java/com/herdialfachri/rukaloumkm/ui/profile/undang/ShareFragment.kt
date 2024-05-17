@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.herdialfachri.rukaloumkm.R
 
 class ShareFragment : Fragment(), View.OnClickListener {
@@ -25,6 +27,16 @@ class ShareFragment : Fragment(), View.OnClickListener {
         btnShare.setOnClickListener(this)
 
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Mendapatkan referensi ke toolbar
+        val toolbar: Toolbar = view.findViewById(R.id.toolbar_share)
+        toolbar.setNavigationOnClickListener {
+            findNavController().navigateUp()
+        }
     }
 
     override fun onClick(v: View?) {
