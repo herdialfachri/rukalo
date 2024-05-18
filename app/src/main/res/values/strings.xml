@@ -47,4 +47,20 @@
     <string name="reset">Reset</string>
     <string name="gambar_splash_screen">gambar splash screen</string>
     <string name="resep">Resep</string>
+    <string name="ummi">UMMI Sukabumi</string>
+    <string name="presented_by">Presented by</string>
+    <string name="cara_menggunakan_aplikasi">Cara Menggunakan Aplikasi</string>
+    <string name="cara_mendaftar_cara_membeli_cara_masuk">Cara mendaftar, cara membeli, cara masuk</string>
+    <string name="tombol_arrow_enter">tombol arrow enter</string>
+    <string name="tombol_keterangan">tombol keterangan</string>
+    <string name="hak_cipta_aplikasi">Hak Cipta Aplikasi</string>
+    <string name="nomor_haki_status_pendaftaran_hak_cipta">Nomor Haki, Status Pendaftaran Hak Cipta</string>
+    <string name="informasi_lainnya">Informasi Lainnya</string>
+    <string name="undang_teman">Undang Teman</string>
+    <string name="cara_mengundang_teman">Cara mengundang teman</string>
+    <string name="tentang_aplikasi_rukalo">Tentang Aplikasi Rukalo</string>
+    <string name="gambar_ummi">gambar ummi</string>
+    <string name="gambar_recyclerview">gambar recyclerview</string>
+    <string name="nama_makanan">Nama makanan</string>
+    <string name="deskripsi">Deskripsi</string>
 </resources>

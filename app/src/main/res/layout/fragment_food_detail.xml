@@ -33,7 +33,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar_detail_food"
-        tools:src="@tools:sample/avatars" />
+        tools:src="@tools:sample/avatars"
+        android:contentDescription="@string/gambar_recyclerview" />
 
     <TextView
         android:id="@+id/food_name"
@@ -42,7 +43,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:paddingTop="16dp"
-        android:text="Nama makanan"
+        android:text="@string/nama_makanan"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/food_image"
@@ -56,7 +57,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:paddingTop="8dp"
-        android:text="Deskripsi"
+        android:text="@string/deskripsi"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/food_name"
         app:layout_constraintStart_toStartOf="@+id/food_name"

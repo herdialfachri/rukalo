@@ -1,20 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:gravity="center">
+    android:fillViewport="true"
+    tools:context=".SplashActivity">
 
-    <ImageView
-        android:id="@+id/splash_image"
-        android:layout_width="240dp"
-        android:layout_height="240dp"
-        android:contentDescription="@string/gambar_splash_screen"
-        android:src="@drawable/splashscreen"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/splash_image"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:layout_marginBottom="50dp"
+            android:contentDescription="@string/gambar_splash_screen"
+            android:src="@drawable/splashscreen"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_persembahan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/presented_by"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/splash_image" />
+
+        <ImageView
+            android:id="@+id/iv_ummi"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/logo_ummi"
+            app:layout_constraintEnd_toEndOf="@+id/tv_persembahan"
+            app:layout_constraintStart_toStartOf="@+id/tv_persembahan"
+            app:layout_constraintTop_toBottomOf="@+id/tv_persembahan"
+            android:contentDescription="@string/gambar_ummi" />
+
+        <TextView
+            android:id="@+id/tv_ummi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppinsbold"
+            android:text="@string/ummi"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/iv_ummi"
+            app:layout_constraintStart_toStartOf="@+id/iv_ummi"
+            app:layout_constraintTop_toBottomOf="@+id/iv_ummi" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

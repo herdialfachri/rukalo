@@ -17,6 +17,6 @@ class SplashActivity : AppCompatActivity() {
             val intent = Intent(this@SplashActivity, MainActivity::class.java)
             startActivity(intent)
             finish()
-        }, 1000) // Splash screen akan ditampilkan selama 3 detik
+        }, 3000) // Splash screen akan ditampilkan selama 3 detik
     }
 }

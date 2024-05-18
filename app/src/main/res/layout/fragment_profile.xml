@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".ui.profile.ProfileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
 
     <ProgressBar
         android:id="@+id/loadingKeluar"
@@ -96,7 +102,8 @@
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="@+id/iv_hubungi_desa"
         app:layout_constraintStart_toEndOf="@+id/iv_hubungi_desa"
-        app:layout_constraintTop_toTopOf="@+id/iv_hubungi_desa" />
+        app:layout_constraintTop_toTopOf="@+id/iv_hubungi_desa"
+        tools:ignore="SmallSp" />
 
     <ImageView
         android:id="@+id/btn_enter"
@@ -128,7 +135,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:fontFamily="@font/poppins"
-        android:text="Cara Menggunakan Aplikasi"
+        android:text="@string/cara_menggunakan_aplikasi"
         android:textColor="@color/black"
         android:textSize="14sp"
         android:textStyle="bold"
@@ -142,12 +149,13 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins"
-        android:text="Cara mendaftar, cara membeli, cara masuk"
+        android:text="@string/cara_mendaftar_cara_membeli_cara_masuk"
         android:textSize="10sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="@+id/iv_tentang_aplikasi"
         app:layout_constraintStart_toEndOf="@+id/iv_tentang_aplikasi"
-        app:layout_constraintTop_toTopOf="@+id/iv_tentang_aplikasi" />
+        app:layout_constraintTop_toTopOf="@+id/iv_tentang_aplikasi"
+        tools:ignore="SmallSp" />
 
     <Button
         android:id="@+id/button_tentang_aplikasi"
@@ -170,7 +178,8 @@
         android:src="@drawable/baseline_arrow_forward_ios_24"
         app:layout_constraintBottom_toBottomOf="@+id/button_tentang_aplikasi"
         app:layout_constraintEnd_toEndOf="@+id/button_tentang_aplikasi"
-        app:layout_constraintTop_toTopOf="@+id/button_tentang_aplikasi" />
+        app:layout_constraintTop_toTopOf="@+id/button_tentang_aplikasi"
+        android:contentDescription="@string/tombol_arrow_enter" />
     <!--akhir cara pakai apk-->
 
     <!--awal hak cipta-->
@@ -182,7 +191,8 @@
         android:src="@drawable/baseline_hak_settings_24"
         app:layout_constraintBottom_toBottomOf="@+id/button_hak_cipta"
         app:layout_constraintStart_toStartOf="@+id/button_hak_cipta"
-        app:layout_constraintTop_toTopOf="@+id/button_hak_cipta" />
+        app:layout_constraintTop_toTopOf="@+id/button_hak_cipta"
+        android:contentDescription="@string/tombol_keterangan" />
 
     <TextView
         android:id="@+id/tv_hak"
@@ -190,7 +200,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:fontFamily="@font/poppins"
-        android:text="Hak Cipta Aplikasi"
+        android:text="@string/hak_cipta_aplikasi"
         android:textColor="@color/black"
         android:textSize="14sp"
         android:textStyle="bold"
@@ -204,12 +214,13 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins"
-        android:text="Nomor Haki, Status Pendaftaran Hak Cipta"
+        android:text="@string/nomor_haki_status_pendaftaran_hak_cipta"
         android:textSize="10sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="@+id/iv_hak"
         app:layout_constraintStart_toEndOf="@+id/iv_hak"
-        app:layout_constraintTop_toTopOf="@+id/iv_hak" />
+        app:layout_constraintTop_toTopOf="@+id/iv_hak"
+        tools:ignore="SmallSp" />
 
     <Button
         android:id="@+id/button_hak_cipta"
@@ -232,7 +243,8 @@
         android:src="@drawable/baseline_arrow_forward_ios_24"
         app:layout_constraintBottom_toBottomOf="@+id/button_hak_cipta"
         app:layout_constraintEnd_toEndOf="@+id/button_hak_cipta"
-        app:layout_constraintTop_toTopOf="@+id/button_hak_cipta" />
+        app:layout_constraintTop_toTopOf="@+id/button_hak_cipta"
+        android:contentDescription="@string/tombol_arrow_enter" />
     <!--akhir cara pakai apk-->
 
     <!--awal informasi 2-->
@@ -243,7 +255,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/poppins"
-        android:text="Informasi Lainnya"
+        android:text="@string/informasi_lainnya"
         android:textColor="@color/black"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -258,7 +270,8 @@
         android:src="@drawable/baseline_add_reaction_24"
         app:layout_constraintBottom_toBottomOf="@+id/button_undang"
         app:layout_constraintStart_toStartOf="@+id/button_undang"
-        app:layout_constraintTop_toTopOf="@+id/button_undang" />
+        app:layout_constraintTop_toTopOf="@+id/button_undang"
+        android:contentDescription="@string/tombol_keterangan" />
 
     <TextView
         android:id="@+id/tv_undang"
@@ -266,7 +279,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:fontFamily="@font/poppins"
-        android:text="Undang Teman"
+        android:text="@string/undang_teman"
         android:textColor="@color/black"
         android:textSize="14sp"
         android:textStyle="bold"
@@ -280,12 +293,13 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins"
-        android:text="Cara mengundang teman"
+        android:text="@string/cara_mengundang_teman"
         android:textSize="10sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="@+id/iv_undang"
         app:layout_constraintStart_toEndOf="@+id/iv_undang"
-        app:layout_constraintTop_toTopOf="@+id/iv_undang" />
+        app:layout_constraintTop_toTopOf="@+id/iv_undang"
+        tools:ignore="SmallSp" />
 
     <Button
         android:id="@+id/button_undang"
@@ -308,7 +322,8 @@
         android:src="@drawable/baseline_arrow_forward_ios_24"
         app:layout_constraintBottom_toBottomOf="@+id/button_undang"
         app:layout_constraintEnd_toEndOf="@+id/button_undang"
-        app:layout_constraintTop_toTopOf="@+id/button_undang" />
+        app:layout_constraintTop_toTopOf="@+id/button_undang"
+        android:contentDescription="@string/tombol_arrow_enter" />
     <!--akhir awal cara undang teman-->
 
     <!--awal tentang rukalo-->
@@ -331,7 +346,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:fontFamily="@font/poppins"
-        android:text="Tentang Aplikasi Rukalo"
+        android:text="@string/tentang_aplikasi_rukalo"
         android:textColor="@color/black"
         android:textSize="14sp"
         android:textStyle="bold"
@@ -347,7 +362,8 @@
         android:src="@drawable/baseline_arrow_forward_ios_24"
         app:layout_constraintBottom_toBottomOf="@+id/btn_tentang_aplikasi"
         app:layout_constraintEnd_toEndOf="@+id/btn_tentang_aplikasi"
-        app:layout_constraintTop_toTopOf="@+id/btn_tentang_aplikasi" />
+        app:layout_constraintTop_toTopOf="@+id/btn_tentang_aplikasi"
+        android:contentDescription="@string/tombol_arrow_enter" />
     <!--akhir awal cara undang teman-->
 
     <!--button daftar-->
@@ -380,4 +396,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_masuk" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

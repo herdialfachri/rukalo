@@ -11,14 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:scaleType="centerCrop"
-        tools:src="@tools:sample/avatars"/>
+        tools:src="@tools:sample/avatars"
+        android:contentDescription="@string/gambar_recyclerview" />
 
     <TextView
         android:id="@+id/food_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="18sp"
-        android:text="Nama Makanan"
+        android:text="@string/nama_makanan"
         android:textStyle="bold"
         android:paddingTop="4dp" />
 
@@ -26,7 +27,7 @@
         android:id="@+id/food_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Deskripsi"
+        android:text="@string/deskripsi"
         android:textSize="14sp"
         android:paddingTop="2dp" />
 </LinearLayout>
