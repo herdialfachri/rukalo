@@ -8,7 +8,7 @@
 
     <!--text profil-->
     <TextView
-        android:id="@+id/tv_recyclerview"
+        android:id="@+id/tv_rv_resep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -32,7 +32,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_recyclerview"
+        app:layout_constraintTop_toBottomOf="@+id/tv_rv_resep"
         tools:listitem="@layout/item_food" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
