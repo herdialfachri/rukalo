@@ -14,7 +14,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins"
-        android:text="Resep"
+        android:text="@string/resep"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="28sp"
