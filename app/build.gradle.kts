@@ -42,8 +42,9 @@ android {
 
 dependencies {
 
-//    lottie library untuk animasi loading
-    implementation (libs.lottie)
+//    library untuk mengambil gambar lewat link
+    implementation (libs.glide)
+    annotationProcessor (libs.compiler.v4110)
 
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)

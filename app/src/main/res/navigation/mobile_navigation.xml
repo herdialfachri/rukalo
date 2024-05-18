@@ -22,7 +22,11 @@
         android:id="@+id/navigation_resep"
         android:name="com.herdialfachri.rukaloumkm.ui.dashboard.DashboardFragment"
         android:label="@string/title_resep"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_navigation_resep_to_detailFoodFragment"
+            app:destination="@id/detailFoodFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_profil"
@@ -70,4 +74,9 @@
         android:name="com.herdialfachri.rukaloumkm.login.LoginActivity"
         android:label="activity_login"
         tools:layout="@layout/activity_login" />
+    <fragment
+        android:id="@+id/detailFoodFragment"
+        android:name="com.herdialfachri.rukaloumkm.ui.dashboard.FoodDetailFragment"
+        android:label="fragment_detail_food"
+        tools:layout="@layout/fragment_food_detail" />
 </navigation>
