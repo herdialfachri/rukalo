@@ -45,7 +45,7 @@
             android:layout_marginStart="16dp"
             android:text="@string/deskripsi"
             android:textColor="@color/black"
-            android:textSize="14sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/cardView2"

@@ -34,7 +34,7 @@
         android:text="@string/profil_tv"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="28sp"
+        android:textSize="29sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -47,23 +47,23 @@
         android:layout_marginTop="16dp"
         android:text="@string/seputar_aplikasi"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="13sp"
         app:layout_constraintStart_toStartOf="@+id/tv_profile"
         app:layout_constraintTop_toBottomOf="@+id/tv_profile" />
 
     <!--awal_hubungi_desa-->
-    <Button
-        android:id="@+id/btn_hubungi_desa"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/button_outline"
-        android:textColor="@android:color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_about" />
+        <Button
+            android:id="@+id/btn_hubungi_desa"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/button_outline"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_about" />
 
     <ImageView
         android:id="@+id/iv_hubungi_desa"
@@ -82,8 +82,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="@string/hubungi_desa_palasari_girang"
-            android:textColor="@color/black"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/iv_hubungi_desa"
             app:layout_constraintStart_toEndOf="@+id/iv_hubungi_desa"
@@ -105,10 +104,10 @@
         <Button
             android:id="@+id/button_tentang_aplikasi"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="8dp"
             android:background="@drawable/button_outline"
             android:textColor="@android:color/black"
             app:layout_constraintEnd_toEndOf="parent"
@@ -132,8 +131,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="@string/cara_menggunakan_aplikasi"
-            android:textColor="@color/black"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/iv_tentang_aplikasi"
             app:layout_constraintStart_toEndOf="@+id/iv_tentang_aplikasi"
@@ -155,10 +153,10 @@
         <Button
             android:id="@+id/button_hak_cipta"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="8dp"
             android:background="@drawable/button_outline"
             android:textColor="@android:color/black"
             app:layout_constraintEnd_toEndOf="parent"
@@ -182,8 +180,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="@string/hak_cipta_aplikasi"
-            android:textColor="@color/black"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/iv_hak"
             app:layout_constraintStart_toEndOf="@+id/iv_hak"
@@ -205,10 +202,10 @@
         <Button
             android:id="@+id/button_undang"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="8dp"
             android:background="@drawable/button_outline"
             android:textColor="@android:color/black"
             app:layout_constraintEnd_toEndOf="parent"
@@ -223,7 +220,7 @@
         android:layout_marginTop="24dp"
         android:text="@string/informasi_lainnya"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="13sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_hak_cipta" />
 
@@ -245,8 +242,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="@string/undang_teman"
-            android:textColor="@color/black"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/iv_undang"
             app:layout_constraintStart_toEndOf="@+id/iv_undang"
@@ -268,10 +264,10 @@
         <Button
             android:id="@+id/btn_tentang_aplikasi"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="8dp"
             android:background="@drawable/button_outline"
             android:textColor="@android:color/black"
             app:layout_constraintEnd_toEndOf="parent"
@@ -284,8 +280,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="@string/tentang_aplikasi_rukalo"
-        android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/btn_tentang_aplikasi"
         app:layout_constraintStart_toStartOf="@+id/btn_tentang_aplikasi"
@@ -304,32 +299,32 @@
     <!--akhir awal cara undang teman-->
 
     <!--button daftar-->
-    <Button
-        android:id="@+id/btn_masuk"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/masuk"
-        android:textSize="16sp"
-        android:textColor="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_tentang_aplikasi" />
+        <Button
+            android:id="@+id/btn_masuk"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/masuk"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_tentang_aplikasi" />
 
-    <Button
-        android:id="@+id/btn_logout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:textSize="16sp"
-        android:text="@string/keluar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_masuk" />
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/keluar"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_masuk" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
