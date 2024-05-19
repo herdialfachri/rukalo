@@ -24,8 +24,12 @@
         android:label="@string/title_resep"
         tools:layout="@layout/fragment_dashboard" >
         <action
-            android:id="@+id/action_navigation_resep_to_detailFoodFragment"
-            app:destination="@id/detailFoodFragment" />
+            android:id="@+id/action_navigation_resep_to_detailActivity2"
+            app:destination="@id/detailActivity2"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 
     <fragment
@@ -35,19 +39,35 @@
         tools:layout="@layout/fragment_profile">
         <action
             android:id="@+id/action_navigation_profil_to_aboutFragment"
-            app:destination="@id/aboutFragment" />
+            app:destination="@id/aboutFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_navigation_profil_to_kontakFragment"
-            app:destination="@id/kontakFragment" />
-        <action
-            android:id="@+id/action_navigation_profil_to_registerActivity"
-            app:destination="@id/registerActivity" />
+            app:destination="@id/kontakFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_navigation_profil_to_shareFragment"
-            app:destination="@id/shareFragment" />
+            app:destination="@id/shareFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_navigation_profil_to_loginActivity"
-            app:destination="@id/loginActivity" />
+            app:destination="@id/loginActivity"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_navigation_profil_to_navigation_home"
+            app:destination="@id/navigation_home" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
@@ -59,11 +79,6 @@
         android:name="com.herdialfachri.rukaloumkm.ui.profile.kontak.KontakFragment"
         android:label="fragment_kontak"
         tools:layout="@layout/fragment_kontak" />
-    <activity
-        android:id="@+id/registerActivity"
-        android:name="com.herdialfachri.rukaloumkm.login.RegisterActivity"
-        android:label="activity_register"
-        tools:layout="@layout/activity_register" />
     <fragment
         android:id="@+id/shareFragment"
         android:name="com.herdialfachri.rukaloumkm.ui.profile.undang.ShareFragment"
@@ -74,9 +89,9 @@
         android:name="com.herdialfachri.rukaloumkm.login.LoginActivity"
         android:label="activity_login"
         tools:layout="@layout/activity_login" />
-    <fragment
-        android:id="@+id/detailFoodFragment"
-        android:name="com.herdialfachri.rukaloumkm.ui.dashboard.FoodDetailFragment"
-        android:label="fragment_detail_food"
-        tools:layout="@layout/fragment_food_detail" />
+    <activity
+        android:id="@+id/detailActivity2"
+        android:name="com.herdialfachri.rukaloumkm.ui.dashboard.DetailActivity2"
+        android:label="activity_detail2"
+        tools:layout="@layout/activity_detail2" />
 </navigation>

@@ -1,61 +1,163 @@
 package com.herdialfachri.rukaloumkm.ui.dashboard
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.herdialfachri.rukaloumkm.R
-import com.herdialfachri.rukaloumkm.databinding.FragmentDashboardBinding
-import com.herdialfachri.rukaloumkm.models.FoodItem
+import java.util.*
+import kotlin.collections.ArrayList
 
-class DashboardFragment : Fragment(), FoodAdapter.OnItemClickListener {
+class DashboardFragment : Fragment() {
 
-    private var _binding: FragmentDashboardBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var dataList: ArrayList<FoodItem>
+    lateinit var imageList: Array<Int>
+    lateinit var titleList: Array<String>
+    lateinit var descList: Array<String>
+    lateinit var detailImageList: Array<Int>
+    private lateinit var myAdapter: FoodAdapter
+    private lateinit var searchView: SearchView
+    private lateinit var searchList: ArrayList<FoodItem>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        val dashboardViewModel =
-            ViewModelProvider(this).get(DashboardViewModel::class.java)
+    ): View? {
+        // Inflate the layout for this fragment
+        val view = inflater.inflate(R.layout.fragment_dashboard, container, false)
 
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        imageList = arrayOf(
+            R.drawable.seblak,
+            R.drawable.nyemek,
+            R.drawable.tahuwalik,
+            R.drawable.roti,
+            R.drawable.cookies,
+            R.drawable.ciskek,
+            R.drawable.saladsayur,
+            R.drawable.chickenwing,
+            R.drawable.dimsum,
+            R.drawable.macaroni,
+            R.drawable.martabakmini,
+            R.drawable.milkcheese,
+            R.drawable.pudingbuah,
+            R.drawable.donatkentang)
 
-        val foodList = listOf(
-            FoodItem("Pizza", "Delicious cheese pizza", "https://bolulembang.co.id/wp-content/uploads/2021/09/8_20200407112559_cuanki.jpg"),
-            FoodItem("Burger", "Juicy beef burger", "https://fastly.4sqi.net/img/general/600x600/1546_gIh4ShSX6S1ofxe3E_6uQqYzG0OOHYkIJwgWRygi5Qc.jpg")
-            // Add more items here
-        )
+        titleList = arrayOf(
+            "Seblak Bandung",
+            "Mie Nyemek",
+            "Tahu Walik",
+            "Roti Sandwich",
+            "Cookies",
+            "Cheese Cake",
+            "Salad Buah Sayur",
+            "Chicken Wings",
+            "Dimsum",
+            "Macaroni Schotel",
+            "Martabak Mini",
+            "Milk Cheese Tea",
+            "Puding Buah",
+            "Donat Kentang")
 
-        val adapter = FoodAdapter(foodList, this)
-        binding.rvDashboard.layoutManager = GridLayoutManager(context, 2)
-        binding.rvDashboard.adapter = adapter
+        descList = arrayOf(
+            getString(R.string.seblakbandung),
+            getString(R.string.mienyemek),
+            getString(R.string.tahuwalik),
+            getString(R.string.rotisandwich),
+            getString(R.string.cookies),
+            getString(R.string.ciskek),
+            getString(R.string.saladsayur),
+            getString(R.string.chickenwings),
+            getString(R.string.dimsum),
+            getString(R.string.makaroni),
+            getString(R.string.martabakmini),
+            getString(R.string.milkcheese),
+            getString(R.string.pudingbuah),
+            getString(R.string.donatkentang))
 
-        return root
+        detailImageList = arrayOf(
+            R.drawable.seblak,
+            R.drawable.nyemek,
+            R.drawable.tahuwalik,
+            R.drawable.roti,
+            R.drawable.cookies,
+            R.drawable.ciskek,
+            R.drawable.saladsayur,
+            R.drawable.chickenwing,
+            R.drawable.dimsum,
+            R.drawable.macaroni,
+            R.drawable.martabakmini,
+            R.drawable.milkcheese,
+            R.drawable.pudingbuah,
+            R.drawable.donatkentang)
+
+        recyclerView = view.findViewById(R.id.recyclerView)
+        searchView = view.findViewById(R.id.search)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.setHasFixedSize(true)
+
+        dataList = arrayListOf()
+        searchList = arrayListOf()
+        getData()
+
+        searchView.clearFocus()
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                searchView.clearFocus()
+                return true
+            }
+
+            @SuppressLint("NotifyDataSetChanged")
+            override fun onQueryTextChange(newText: String?): Boolean {
+                searchList.clear()
+                val searchText = newText!!.lowercase(Locale.getDefault())
+                if (searchText.isNotEmpty()) {
+                    dataList.forEach {
+                        if (it.dataTitle.lowercase(Locale.getDefault()).contains(searchText)) {
+                            searchList.add(it)
+                        }
+                    }
+                    recyclerView.adapter!!.notifyDataSetChanged()
+                } else {
+                    searchList.clear()
+                    searchList.addAll(dataList)
+                    recyclerView.adapter!!.notifyDataSetChanged()
+                }
+                return false
+            }
+        })
+
+        myAdapter = FoodAdapter(searchList)
+        recyclerView.adapter = myAdapter
+
+        myAdapter.onItemClick = {
+            val intent = Intent(activity, DetailActivity2::class.java)
+            intent.putExtra("android", it)
+            startActivity(intent)
+        }
+
+        return view
     }
+
     override fun onStart() {
         super.onStart()
         val bottomNav = activity?.findViewById<BottomNavigationView>(R.id.nav_view)
         bottomNav?.visibility = View.VISIBLE
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
-    override fun onItemClick(foodItem: FoodItem) {
-        val bundle = Bundle().apply {
-            putParcelable("food_item", foodItem)
+    private fun getData() {
+        for (i in imageList.indices) {
+            val dataClass = FoodItem(imageList[i], titleList[i], descList[i], detailImageList[i])
+            dataList.add(dataClass)
         }
-        findNavController().navigate(R.id.action_navigation_resep_to_detailFoodFragment, bundle)
+        searchList.addAll(dataList)
+        recyclerView.adapter = FoodAdapter(searchList)
     }
 }

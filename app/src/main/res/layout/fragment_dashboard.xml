@@ -7,32 +7,32 @@
     tools:context=".ui.dashboard.DashboardFragment"
     android:theme="@style/CustomTextViewStyle">
 
-    <!--text profil-->
-    <TextView
-        android:id="@+id/tv_rv_resep"
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.SearchView
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/resep"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="28sp"
-        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:id="@+id/search"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:iconifiedByDefault="false"
+        app:searchHintIcon="@null"
+        app:queryHint="Cari apa?"
+        android:focusable="false"
+        app:closeIcon="@drawable/baseline_close_24"
+        app:searchIcon="@drawable/search"
+        android:paddingStart="0dp"
+        android:background="@drawable/searchview_bg"
+        tools:ignore="RtlSymmetry" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_dashboard"
-        android:layout_width="0dp"
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_rv_resep"
-        tools:listitem="@layout/item_food" />
-
+        app:layout_constraintTop_toBottomOf="@id/search" />
 </androidx.constraintlayout.widget.ConstraintLayout>

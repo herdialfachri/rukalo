@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -15,32 +15,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RukaloUmkm"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ui.dashboard.DetailActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".ui.dashboard.DetailActivity"
+            android:exported="false" />
         <activity
             android:name=".SplashActivity"
-            android:screenOrientation="portrait"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.RukaloUmkm"
             tools:ignore="DiscouragedApi,LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-<!--        <activity-->
-<!--            android:name=".login.RegisterActivity"-->
-<!--            android:exported="false" />-->
+        </activity> <!-- <activity -->
+        <!-- android:name=".login.RegisterActivity" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".login.LoginActivity"
-            android:screenOrientation="portrait"
             android:exported="false"
+            android:screenOrientation="portrait"
             tools:ignore="DiscouragedApi,LockedOrientationActivity" />
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait"
             android:exported="true"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             tools:ignore="DiscouragedApi,LockedOrientationActivity,RedundantLabel" />
     </application>
 
