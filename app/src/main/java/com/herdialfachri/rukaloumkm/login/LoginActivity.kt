@@ -1,7 +1,10 @@
 package com.herdialfachri.rukaloumkm.login
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.drawable.ColorDrawable
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.net.Uri
 import android.os.Bundle
 import android.text.method.PasswordTransformationMethod
@@ -109,35 +112,46 @@ class LoginActivity : AppCompatActivity() {
             val email = binding.loginEmail.text.toString()
             val password = binding.loginPassword.text.toString()
             if (email.isNotEmpty() && password.isNotEmpty()) {
-                loadingProgressBar.visibility = View.VISIBLE
-                firebaseAuth.signInWithEmailAndPassword(email, password)
-                    .addOnCompleteListener { task ->
-                        loadingProgressBar.visibility = View.GONE
-                        if (task.isSuccessful) {
-                            val currentUserEmail = firebaseAuth.currentUser?.email
-                            Toast.makeText(
-                                this,
-                                "Anda masuk sebagai $currentUserEmail",
-                                Toast.LENGTH_SHORT
-                            ).show()
+                if (isInternetAvailable()) {
+                    loadingProgressBar.visibility = View.VISIBLE
+                    firebaseAuth.signInWithEmailAndPassword(email, password)
+                        .addOnCompleteListener { task ->
+                            loadingProgressBar.visibility = View.GONE
+                            if (task.isSuccessful) {
+                                val currentUserEmail = firebaseAuth.currentUser?.email
+                                Toast.makeText(
+                                    this,
+                                    "Anda masuk sebagai $currentUserEmail",
+                                    Toast.LENGTH_SHORT
+                                ).show()
 
-                            val intent = Intent(this, MainActivity::class.java).apply {
-                                flags =
-                                    Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                                val intent = Intent(this, MainActivity::class.java).apply {
+                                    flags =
+                                        Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                                }
+                                startActivity(intent)
+                                finish()
+                            } else {
+                                Toast.makeText(
+                                    this,
+                                    "Maaf email atau password yang anda masukan salah",
+                                    Toast.LENGTH_SHORT
+                                ).show()
                             }
-                            startActivity(intent)
-                            finish()
-                        } else {
-                            Toast.makeText(
-                                this,
-                                "Maaf email atau password yang anda masukan salah",
-                                Toast.LENGTH_SHORT
-                            ).show()
                         }
-                    }
+                } else {
+                    Toast.makeText(this, "Tidak ada koneksi internet", Toast.LENGTH_SHORT).show()
+                }
             } else {
                 Toast.makeText(this, "Kolom tidak boleh kosong", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    private fun isInternetAvailable(): Boolean {
+        val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val network = connectivityManager.activeNetwork ?: return false
+        val networkCapabilities = connectivityManager.getNetworkCapabilities(network) ?: return false
+        return networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
     }
 }

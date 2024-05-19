@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -17,24 +18,30 @@
 
         <activity
             android:name=".SplashActivity"
+            android:screenOrientation="portrait"
             android:exported="true"
-            android:theme="@style/Theme.RukaloUmkm">
+            android:theme="@style/Theme.RukaloUmkm"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".login.RegisterActivity"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".login.RegisterActivity"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".login.LoginActivity"
-            android:exported="false" />
+            android:screenOrientation="portrait"
+            android:exported="false"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:exported="true"
-            android:label="@string/app_name" />
+            android:label="@string/app_name"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity,RedundantLabel" />
     </application>
 
 </manifest>
