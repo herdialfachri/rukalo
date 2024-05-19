@@ -8,9 +8,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:theme="@style/CustomTextViewStyle">
+        android:layout_height="wrap_content">
 
         <ProgressBar
             android:id="@+id/loadingProgressBar"
@@ -38,8 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
+            android:fontFamily="@font/poppins"
             android:text="@string/versi"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -86,6 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/welcome_to_rukalo"
+            android:fontFamily="@font/poppins"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:textSize="28sp"
@@ -99,6 +97,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="17dp"
             android:layout_marginEnd="17dp"
+            android:fontFamily="@font/poppins"
             android:gravity="center"
             android:text="@string/desc_lengkap"
             android:textColor="@color/black"
@@ -112,12 +111,13 @@
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="85dp"
             android:layout_marginEnd="16dp"
             android:autofillHints="emailAddress"
             android:background="@drawable/lavender_border"
             android:drawableStart="@drawable/baseline_account_circle_24"
             android:drawablePadding="8dp"
+            android:fontFamily="@font/poppins"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:padding="8dp"
@@ -138,6 +138,7 @@
             android:background="@drawable/lavender_border"
             android:drawableStart="@drawable/baseline_edit_24"
             android:drawablePadding="8dp"
+            android:fontFamily="@font/poppins"
             android:hint="@string/kata_sandi"
             android:inputType="textPassword"
             android:padding="8dp"
@@ -155,6 +156,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
+            android:fontFamily="@font/poppins"
             android:text="@string/masuk"
             android:textSize="16sp"
             app:cornerRadius="30dp"
@@ -169,6 +171,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
             android:padding="8dp"
+            android:fontFamily="@font/poppins"
             android:text="@string/lupa_kata_sandi"
             android:textColor="@color/blue"
             android:textSize="14sp"
@@ -182,6 +185,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
             android:padding="8dp"
+            android:fontFamily="@font/poppins"
             android:text="@string/seller"
             android:textColor="@color/blue"
             android:textSize="14sp"
