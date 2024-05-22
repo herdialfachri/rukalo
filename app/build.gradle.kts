@@ -44,6 +44,7 @@ dependencies {
 
 //    library untuk mengambil gambar lewat link
     implementation (libs.glide)
+    implementation(libs.firebase.database)
     annotationProcessor (libs.compiler.v4110)
 
     implementation(libs.androidx.navigation.fragment.ktx)

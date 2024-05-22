@@ -13,45 +13,45 @@
         android:gravity="center"
         android:theme="@style/CustomTextViewStyle">
 
-    <ProgressBar
-        android:id="@+id/loadingKeluar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ProgressBar
+            android:id="@+id/loadingKeluar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <!--text profil-->
-    <TextView
-        android:id="@+id/tv_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/profil_tv"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="29sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <!--text profil-->
+        <TextView
+            android:id="@+id/tv_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/profil_tv"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="29sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <!--text seputar aplikasi-->
-    <TextView
-        android:id="@+id/tv_about"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/seputar_aplikasi"
-        android:textColor="@color/black"
-        android:textSize="13sp"
-        app:layout_constraintStart_toStartOf="@+id/tv_profile"
-        app:layout_constraintTop_toBottomOf="@+id/tv_profile" />
+        <!--text seputar aplikasi-->
+        <TextView
+            android:id="@+id/tv_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/seputar_aplikasi"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_profile"
+            app:layout_constraintTop_toBottomOf="@+id/tv_profile" />
 
-    <!--awal_hubungi_desa-->
+        <!--awal_hubungi_desa-->
         <Button
             android:id="@+id/btn_hubungi_desa"
             android:layout_width="match_parent"
@@ -65,16 +65,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_about" />
 
-    <ImageView
-        android:id="@+id/iv_hubungi_desa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:contentDescription="@string/gambar_pesan"
-        android:src="@drawable/baseline_chat_24"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_hubungi_desa"
-        app:layout_constraintStart_toStartOf="@+id/btn_hubungi_desa"
-        app:layout_constraintTop_toTopOf="@+id/btn_hubungi_desa" />
+        <ImageView
+            android:id="@+id/iv_hubungi_desa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:contentDescription="@string/gambar_pesan"
+            android:src="@drawable/baseline_chat_24"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_hubungi_desa"
+            app:layout_constraintStart_toStartOf="@+id/btn_hubungi_desa"
+            app:layout_constraintTop_toTopOf="@+id/btn_hubungi_desa" />
 
         <TextView
             android:id="@+id/tv_hubungi_desa"
@@ -88,19 +88,7 @@
             app:layout_constraintStart_toEndOf="@+id/iv_hubungi_desa"
             app:layout_constraintTop_toTopOf="@+id/iv_hubungi_desa" />
 
-        <ImageView
-            android:id="@+id/btn_enter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:contentDescription="@string/gambar_arrow"
-            android:src="@drawable/baseline_arrow_forward_ios_24"
-            app:layout_constraintBottom_toBottomOf="@+id/btn_hubungi_desa"
-            app:layout_constraintEnd_toEndOf="@+id/btn_hubungi_desa"
-            app:layout_constraintTop_toTopOf="@+id/btn_hubungi_desa" />
-    <!--akhir_hubungi_desa-->
-
-    <!--awal cara pakai apk-->
+        <!--awal cara pakai apk-->
         <Button
             android:id="@+id/button_tentang_aplikasi"
             android:layout_width="match_parent"
@@ -114,16 +102,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_hubungi_desa" />
 
-    <ImageView
-        android:id="@+id/iv_tentang_aplikasi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:contentDescription="@string/gambar_tanda_tanya"
-        android:src="@drawable/baseline_contact_support_24"
-        app:layout_constraintBottom_toBottomOf="@+id/button_tentang_aplikasi"
-        app:layout_constraintStart_toStartOf="@+id/button_tentang_aplikasi"
-        app:layout_constraintTop_toTopOf="@+id/button_tentang_aplikasi" />
+        <ImageView
+            android:id="@+id/iv_tentang_aplikasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:contentDescription="@string/gambar_tanda_tanya"
+            android:src="@drawable/baseline_contact_support_24"
+            app:layout_constraintBottom_toBottomOf="@+id/button_tentang_aplikasi"
+            app:layout_constraintStart_toStartOf="@+id/button_tentang_aplikasi"
+            app:layout_constraintTop_toTopOf="@+id/button_tentang_aplikasi" />
 
         <TextView
             android:id="@+id/tv_tentang_rukalo"
@@ -137,19 +125,7 @@
             app:layout_constraintStart_toEndOf="@+id/iv_tentang_aplikasi"
             app:layout_constraintTop_toTopOf="@+id/iv_tentang_aplikasi" />
 
-        <ImageView
-            android:id="@+id/btn_enter_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:contentDescription="@string/tombol_arrow_enter"
-            android:src="@drawable/baseline_arrow_forward_ios_24"
-            app:layout_constraintBottom_toBottomOf="@+id/button_tentang_aplikasi"
-            app:layout_constraintEnd_toEndOf="@+id/button_tentang_aplikasi"
-            app:layout_constraintTop_toTopOf="@+id/button_tentang_aplikasi" />
-    <!--akhir cara pakai apk-->
-
-    <!--awal hak cipta-->
+        <!--awal hak cipta-->
         <Button
             android:id="@+id/button_hak_cipta"
             android:layout_width="match_parent"
@@ -163,16 +139,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button_tentang_aplikasi" />
 
-    <ImageView
-        android:id="@+id/iv_hak"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:src="@drawable/baseline_hak_settings_24"
-        app:layout_constraintBottom_toBottomOf="@+id/button_hak_cipta"
-        app:layout_constraintStart_toStartOf="@+id/button_hak_cipta"
-        app:layout_constraintTop_toTopOf="@+id/button_hak_cipta"
-        android:contentDescription="@string/tombol_keterangan" />
+        <ImageView
+            android:id="@+id/iv_hak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:contentDescription="@string/tombol_keterangan"
+            android:src="@drawable/baseline_hak_settings_24"
+            app:layout_constraintBottom_toBottomOf="@+id/button_hak_cipta"
+            app:layout_constraintStart_toStartOf="@+id/button_hak_cipta"
+            app:layout_constraintTop_toTopOf="@+id/button_hak_cipta" />
 
         <TextView
             android:id="@+id/tv_hak"
@@ -186,19 +162,7 @@
             app:layout_constraintStart_toEndOf="@+id/iv_hak"
             app:layout_constraintTop_toTopOf="@+id/iv_hak" />
 
-        <ImageView
-            android:id="@+id/btn_enter_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:contentDescription="@string/tombol_arrow_enter"
-            android:src="@drawable/baseline_arrow_forward_ios_24"
-            app:layout_constraintBottom_toBottomOf="@+id/button_hak_cipta"
-            app:layout_constraintEnd_toEndOf="@+id/button_hak_cipta"
-            app:layout_constraintTop_toTopOf="@+id/button_hak_cipta" />
-    <!--akhir cara pakai apk-->
-
-    <!--awal informasi 2-->
+        <!--awal informasi 2-->
         <Button
             android:id="@+id/button_undang"
             android:layout_width="match_parent"
@@ -212,29 +176,29 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv2_about" />
 
-    <TextView
-        android:id="@+id/tv2_about"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/informasi_lainnya"
-        android:textColor="@color/black"
-        android:textSize="13sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_hak_cipta" />
+        <TextView
+            android:id="@+id/tv2_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/informasi_lainnya"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_hak_cipta" />
 
-    <!--awal cara undang teman-->
-    <ImageView
-        android:id="@+id/iv_undang"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:src="@drawable/baseline_add_reaction_24"
-        app:layout_constraintBottom_toBottomOf="@+id/button_undang"
-        app:layout_constraintStart_toStartOf="@+id/button_undang"
-        app:layout_constraintTop_toTopOf="@+id/button_undang"
-        android:contentDescription="@string/tombol_keterangan" />
+        <!--awal cara undang teman-->
+        <ImageView
+            android:id="@+id/iv_undang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:contentDescription="@string/tombol_keterangan"
+            android:src="@drawable/baseline_add_reaction_24"
+            app:layout_constraintBottom_toBottomOf="@+id/button_undang"
+            app:layout_constraintStart_toStartOf="@+id/button_undang"
+            app:layout_constraintTop_toTopOf="@+id/button_undang" />
 
         <TextView
             android:id="@+id/tv_undang"
@@ -248,19 +212,7 @@
             app:layout_constraintStart_toEndOf="@+id/iv_undang"
             app:layout_constraintTop_toTopOf="@+id/iv_undang" />
 
-        <ImageView
-            android:id="@+id/btn_enter_4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:contentDescription="@string/tombol_arrow_enter"
-            android:src="@drawable/baseline_arrow_forward_ios_24"
-            app:layout_constraintBottom_toBottomOf="@+id/button_undang"
-            app:layout_constraintEnd_toEndOf="@+id/button_undang"
-            app:layout_constraintTop_toTopOf="@+id/button_undang" />
-    <!--akhir awal cara undang teman-->
-
-    <!--awal tentang rukalo-->
+        <!--awal tentang rukalo-->
         <Button
             android:id="@+id/btn_tentang_aplikasi"
             android:layout_width="match_parent"
@@ -274,31 +226,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button_undang" />
 
-    <TextView
-        android:id="@+id/tv_tentang_aplikasi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="@string/tentang_aplikasi_rukalo"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_tentang_aplikasi"
-        app:layout_constraintStart_toStartOf="@+id/btn_tentang_aplikasi"
-        app:layout_constraintTop_toTopOf="@+id/btn_tentang_aplikasi" />
-
-        <ImageView
-            android:id="@+id/btn_enter_5"
+        <TextView
+            android:id="@+id/tv_tentang_aplikasi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:contentDescription="@string/tombol_arrow_enter"
-            android:src="@drawable/baseline_arrow_forward_ios_24"
+            android:layout_marginStart="16dp"
+            android:text="@string/tentang_aplikasi_rukalo"
+            android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/btn_tentang_aplikasi"
-            app:layout_constraintEnd_toEndOf="@+id/btn_tentang_aplikasi"
+            app:layout_constraintStart_toStartOf="@+id/btn_tentang_aplikasi"
             app:layout_constraintTop_toTopOf="@+id/btn_tentang_aplikasi" />
-    <!--akhir awal cara undang teman-->
 
-    <!--button daftar-->
+        <!--button daftar-->
         <Button
             android:id="@+id/btn_masuk"
             android:layout_width="match_parent"

@@ -26,10 +26,14 @@ class DetailActivity2 : AppCompatActivity() {
             val detailTitle: TextView = findViewById(R.id.detailTitle)
             val detailDesc: TextView = findViewById(R.id.detailDesc)
             val detailImage: ImageView = findViewById(R.id.detailImage)
+            val waktuMasak: TextView = findViewById(R.id.waktu_masak)
+            val ratingRasa: TextView = findViewById(R.id.cita_rasa)
 
             detailTitle.text = getData.dataTitle
             detailDesc.text = getData.dataDesc
             detailImage.setImageResource(getData.dataDetailImage)
+            waktuMasak.text = getData.dataWaktu
+            ratingRasa.text = getData.dataRating
         }
     }
 }

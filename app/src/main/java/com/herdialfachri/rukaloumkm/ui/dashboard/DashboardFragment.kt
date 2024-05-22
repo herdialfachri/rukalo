@@ -6,14 +6,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import androidx.appcompat.widget.AppCompatRatingBar
 import androidx.appcompat.widget.SearchView
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.herdialfachri.rukaloumkm.R
-import java.util.*
-import kotlin.collections.ArrayList
+import java.util.Locale
 
 class DashboardFragment : Fragment() {
 
@@ -21,6 +21,8 @@ class DashboardFragment : Fragment() {
     private lateinit var dataList: ArrayList<FoodItem>
     lateinit var imageList: Array<Int>
     lateinit var titleList: Array<String>
+    lateinit var timeList: Array<String>
+    lateinit var ratingList: Array<String>
     lateinit var descList: Array<String>
     lateinit var detailImageList: Array<Int>
     private lateinit var myAdapter: FoodAdapter
@@ -48,7 +50,42 @@ class DashboardFragment : Fragment() {
             R.drawable.martabakmini,
             R.drawable.milkcheese,
             R.drawable.pudingbuah,
-            R.drawable.donatkentang)
+            R.drawable.donatkentang
+        )
+
+        timeList = arrayOf(
+            "10 Menit",
+            "20 Menit",
+            "30 Menit",
+            "15 Menit",
+            "60 Menit",
+            "90 Menit",
+            "20 Menit",
+            "60 Menit",
+            "40 Menit",
+            "60 Menit",
+            "30 Menit",
+            "10 Menit",
+            "40 Menit",
+            "45 Menit"
+        )
+
+        ratingList = arrayOf(
+            "9.5 dari 10",
+            "9 dari 10",
+            "8 dari 10",
+            "8.5 dari 10",
+            "9 dari 10",
+            "10 dari 10",
+            "8 dari 10",
+            "9.5 dari 10",
+            "8 dari 10",
+            "8.5 dari 10",
+            "7.5 dari 10",
+            "8.5 dari 10",
+            "7 dari 10",
+            "8.5 dari 10"
+        )
 
         titleList = arrayOf(
             "Seblak Bandung",
@@ -64,7 +101,8 @@ class DashboardFragment : Fragment() {
             "Martabak Mini",
             "Milk Cheese Tea",
             "Puding Buah",
-            "Donat Kentang")
+            "Donat Kentang"
+        )
 
         descList = arrayOf(
             getString(R.string.seblakbandung),
@@ -80,7 +118,8 @@ class DashboardFragment : Fragment() {
             getString(R.string.martabakmini),
             getString(R.string.milkcheese),
             getString(R.string.pudingbuah),
-            getString(R.string.donatkentang))
+            getString(R.string.donatkentang)
+        )
 
         detailImageList = arrayOf(
             R.drawable.seblak,
@@ -96,7 +135,8 @@ class DashboardFragment : Fragment() {
             R.drawable.martabakmini,
             R.drawable.milkcheese,
             R.drawable.pudingbuah,
-            R.drawable.donatkentang)
+            R.drawable.donatkentang
+        )
 
         recyclerView = view.findViewById(R.id.recyclerView)
         searchView = view.findViewById(R.id.search)
@@ -146,15 +186,9 @@ class DashboardFragment : Fragment() {
         return view
     }
 
-    override fun onStart() {
-        super.onStart()
-        val bottomNav = activity?.findViewById<BottomNavigationView>(R.id.nav_view)
-        bottomNav?.visibility = View.VISIBLE
-    }
-
     private fun getData() {
         for (i in imageList.indices) {
-            val dataClass = FoodItem(imageList[i], titleList[i], descList[i], detailImageList[i])
+            val dataClass = FoodItem(imageList[i], titleList[i], descList[i], detailImageList[i], timeList[i], ratingList[i])
             dataList.add(dataClass)
         }
         searchList.addAll(dataList)

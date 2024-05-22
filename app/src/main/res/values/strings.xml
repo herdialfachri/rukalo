@@ -67,84 +67,52 @@
     <!--    recyclerview-->
     <string name="seblakbandung">Seblak Bandung adalah salah satu kuliner khas Kota Bandung yang terkenal dengan
         rasa pedas dan gurihnya. Seblak terdiri dari berbagai bahan seperti kerupuk basah, mie, sayuran, telur, dan
-        daging yang dimasak dalam kuah pedas berbumbu kencur dan bawang. Kuliner ini biasanya disajikan dengan tingkat
-        kepedasan yang bisa disesuaikan dengan selera, menjadikannya favorit bagi pencinta makanan pedas.
-        Seblak Bandung tidak hanya lezat, tetapi juga menawarkan pengalaman kuliner yang unik dengan tekstur
-        kenyal dari kerupuk dan aroma khas bumbu tradisional.</string>
+        daging yang dimasak dalam kuah pedas berbumbu kencur dan bawang.</string>
     <string name="mienyemek">Mie nyemek adalah hidangan mi yang terkenal di Indonesia, terutama di daerah Jawa.
         Mie ini merupakan perpaduan antara mi goreng dan mi kuah, menciptakan tekstur yang lembap dan sedikit berkuah.
-        Dengan bumbu yang kaya akan rasa gurih, manis, dan pedas, mie nyemek sering dihidangkan dengan tambahan sayuran,
-        telur, dan potongan daging ayam atau bakso. Keunikan rasa dan teksturnya membuat mie nyemek menjadi favorit
-        banyak orang, terutama sebagai pilihan santap malam yang hangat dan mengenyangkan.</string>
+        Dengan bumbu yang kaya akan rasa gurih, manis, dan pedas.</string>
     <string name="tahuwalik">Tahu walik adalah camilan khas dari Banyuwangi, Jawa Timur, yang terkenal karena keunikannya.
         Nama "walik" berarti terbalik, dan sesuai namanya, tahu ini diolah dengan cara membalik bagian dalam tahu menjadi
-        bagian luar, kemudian diisi dengan adonan daging ayam atau ikan yang gurih. Setelah diisi, tahu digoreng hingga
-        kecokelatan dan renyah. Perpaduan tekstur renyah di luar dan lembut di dalam, serta cita rasa gurih dari isian daging
-        membuat tahu walik menjadi favorit banyak orang. Cocok dinikmati sebagai camilan sore atau hidangan pendamping saat
-        berkumpul bersama keluarga dan teman.</string>
+        bagian luar, kemudian diisi dengan adonan daging ayam atau ikan yang gurih.</string>
     <string name="rotisandwich">Roti toast sandwich adalah hidangan sederhana namun lezat yang terdiri dari roti panggang diisi
         dengan berbagai bahan pilihan. Kombinasi isian seperti daging, keju, sayuran segar, dan saus memberikan cita rasa yang
-        kaya dan beragam. Roti yang dipanggang hingga renyah menambah tekstur yang menggugah selera, menjadikannya pilihan sempurna
-        untuk sarapan cepat, makan siang praktis, atau camilan yang memuaskan. Dengan variasi isian yang tak terbatas, roti toast
-        sandwich menawarkan fleksibilitas untuk disesuaikan dengan selera dan preferensi setiap individu.</string>
+        kaya dan beragam. Roti yang dipanggang hingga renyah menambah tekstur yang menggugah selera.</string>
     <string name="cookies">Cookies adalah makanan ringan berbentuk bulat pipih yang umumnya dibuat dari campuran tepung, gula, mentega,
         dan telur. Mereka sering kali dilengkapi dengan berbagai tambahan seperti cokelat, kacang, atau buah kering untuk memberikan variasi
-        rasa dan tekstur. Cookies sangat populer di seluruh dunia dan sering disajikan sebagai camilan, baik untuk menemani secangkir teh atau
-        kopi, maupun sebagai bagian dari kue kering di saat-saat spesial seperti Lebaran. Dengan rasa yang manis dan tekstur yang renyah
-        atau chewy, cookies menjadi favorit banyak orang dari segala usia.
-        </string>
+        rasa dan tekstur.</string>
     <string name="ciskek">Cheesecake adalah hidangan penutup yang lezat dan terkenal di seluruh dunia. Terbuat dari lapisan dasar yang
         biasanya terdiri dari remah biskuit, dan lapisan atas yang lembut dan creamy dari campuran keju krim, telur, dan gula, cheesecake
-        menawarkan rasa yang kaya dan tekstur yang halus. Varian topping seperti saus buah, cokelat, atau karamel sering ditambahkan untuk
-        memberikan sentuhan ekstra. Cheesecake bisa dinikmati dalam berbagai rasa, seperti vanilla, cokelat, stroberi, dan lemon,
-        menjadikannya pilihan favorit untuk berbagai acara istimewa dan perayaan.</string>
+        menawarkan rasa yang kaya dan tekstur yang halus.</string>
     <string name="saladsayur">Salad sayur adalah hidangan sehat dan menyegarkan yang terdiri dari berbagai macam sayuran segar seperti selada,
         tomat, mentimun, wortel, dan paprika. Dikombinasikan dengan dressing yang lezat seperti vinaigrette, minyak zaitun, atau saus berbasis
-        yogurt, salad sayur tidak hanya kaya akan serat, vitamin, dan mineral, tetapi juga menawarkan rasa yang nikmat dan tekstur yang beragam.
-        Salad sayur sangat cocok sebagai hidangan pembuka, pelengkap makanan utama, atau bahkan sebagai santapan ringan yang menyehatkan. Dengan
-        tambahan protein seperti kacang-kacangan, biji-bijian, atau potongan ayam panggang, salad sayur bisa menjadi pilihan menu yang lengkap dan bergizi.
-        </string>
+        yogurt, salad sayur tidak hanya kaya akan serat, vitamin, dan mineral, tetapi juga menawarkan rasa yang nikmat dan tekstur yang beragam.</string>
     <string name="chickenwings">Chicken wings, atau sayap ayam, adalah hidangan lezat yang populer di berbagai belahan dunia. Sayap ayam sering kali
         dipanggang, digoreng, atau dibakar dengan berbagai bumbu dan saus yang menggugah selera. Teksturnya yang renyah di luar dan lembut di dalam
         membuatnya menjadi favorit banyak orang. Chicken wings biasanya disajikan dengan saus celup seperti saus barbeque, saus pedas, atau saus keju,
-        yang menambah kenikmatan rasa. Hidangan ini sering menjadi pilihan utama di acara pesta, pertemuan santai, atau sebagai makanan ringan saat
-        menonton pertandingan olahraga. Kenikmatan chicken wings yang sederhana namun menggugah selera membuatnya menjadi salah satu comfort food yang
-        tak pernah gagal memuaskan.
-        </string>
+        yang menambah kenikmatan rasa.</string>
     <string name="dimsum">Dimsum adalah hidangan tradisional Tiongkok yang terdiri dari berbagai macam makanan ringan yang biasanya disajikan dalam porsi
         kecil. Disajikan dalam keranjang bambu atau piring kecil, dimsum mencakup berbagai jenis pangsit, roti, dan makanan laut, baik dikukus, digoreng,
-        maupun dipanggang. Dimsum biasanya dinikmati bersama teh dalam tradisi yum cha, yang berarti "minum teh". Keunikan rasa dan teksturnya, mulai dari
-        lembut hingga renyah, menjadikan dimsum favorit di kalangan pecinta kuliner di seluruh dunia. Setiap suapan dimsum membawa cita rasa otentik dan
-        kaya sejarah budaya Tiongkok.
-        </string>
+        maupun dipanggang.</string>
     <string name="makaroni">Macaroni schotel adalah hidangan khas yang populer di Indonesia, terutama sebagai menu pesta atau acara khusus. Hidangan
         ini terbuat dari macaroni yang dimasak dengan campuran saus creamy, biasanya berbahan dasar susu atau keju, yang kemudian dipanggang
         hingga berwarna keemasan. Sering kali, macaroni schotel diperkaya dengan bahan tambahan seperti daging sapi cincang, ayam, atau sosis,
-        serta sayuran seperti wortel dan kacang polong. Tekstur lembut dari macaroni berpadu sempurna dengan lapisan keju yang renyah di atasnya,
-        menciptakan cita rasa yang lezat dan memanjakan lidah. Cocok disantap hangat, macaroni schotel menjadi favorit keluarga karena kelezatannya
-        yang istimewa dan cara penyajiannya yang praktis.
-    </string>
+        serta sayuran seperti wortel dan kacang polong.</string>
     <string name="martabakmini">Martabak mini adalah versi kecil dari martabak tradisional yang populer di Indonesia. Martabak ini dikenal dengan
         ukurannya yang lebih kecil dan praktis, namun tetap kaya rasa. Dengan beragam varian, baik manis maupun gurih, martabak mini menjadi pilihan
-        camilan yang sempurna untuk berbagai kesempatan. Adonan yang lembut dan berisi aneka topping seperti cokelat, keju, kacang, hingga daging cincang
-        dan telur, menjadikannya favorit bagi semua kalangan. Ukurannya yang mungil membuat martabak mini mudah dinikmati tanpa perlu dipotong,
-        menjadikannya hidangan yang ideal untuk acara santai maupun formal.
-    </string>
+        camilan yang sempurna untuk berbagai kesempatan.</string>
     <string name="milkcheese">Milkcheese adalah produk kuliner yang memadukan kelezatan susu dan keju dalam satu sajian. Dikenal karena teksturnya
         yang lembut dan rasa yang creamy, milkcheese menawarkan sensasi kenikmatan yang unik dan menggugah selera. Produk ini sering digunakan sebagai
-        bahan dasar dalam berbagai hidangan penutup, roti, dan kue, memberikan sentuhan rasa gurih dan manis yang seimbang. Dengan perpaduan sempurna
-        antara susu segar dan keju berkualitas, milkcheese menjadi favorit di kalangan pecinta kuliner yang mencari inovasi rasa baru dalam makanan
-        sehari-hari.
-    </string>
+        bahan dasar dalam berbagai hidangan penutup, roti, dan kue, memberikan sentuhan rasa gurih dan manis yang seimbang.</string>
     <string name="pudingbuah">Puding buah adalah hidangan penutup yang menyegarkan dan lezat, terbuat dari campuran puding yang lembut dan potongan
         buah-buahan segar. Kombinasi ini menciptakan harmoni rasa manis dan asam yang menggugah selera, serta memberikan tekstur yang menarik di
-        setiap gigitan. Puding buah sering disajikan dalam berbagai acara, mulai dari pesta keluarga hingga pertemuan formal, karena selain rasanya
-        yang enak, tampilannya yang berwarna-warni juga menambah daya tarik visual. Mudah disiapkan dan dapat disesuaikan dengan berbagai jenis buah
-        sesuai selera, puding buah adalah pilihan sempurna untuk pencuci mulut yang memanjakan lidah dan menyegarkan.
-    </string>
+        setiap gigitan. Puding buah sering disajikan dalam berbagai acara, karena selain rasanya byang enak, tampilannya yang berwarna-warni
+        juga menambah daya tarik visual.</string>
     <string name="donatkentang">Donat kentang adalah variasi donat yang dibuat dengan mencampurkan kentang tumbuk ke dalam adonan, menghasilkan tekstur
         yang lebih lembut dan empuk dibandingkan donat biasa. Dengan rasa yang sedikit manis dan aroma yang khas, donat kentang sering dihidangkan dengan
-        taburan gula halus atau aneka topping seperti cokelat, keju, dan kacang. Hidangan ini populer di berbagai kalangan karena kelezatan dan keunikan
-        rasanya yang memanjakan lidah, menjadikannya pilihan favorit untuk camilan atau sajian penutup.
-    </string>
+        taburan gula halus atau aneka topping seperti cokelat, keju, dan kacang.</string>
+    <string name="rasa">Cita Rasa</string>
+    <string name="waktu">Waktu</string>
+    <string name="menit">30 Menit</string>
+    <string name="rating">4.9 dari 5.0</string>
+    <string name="instagram">Instagram</string>
 </resources>

@@ -11,6 +11,7 @@ import android.widget.Button
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.herdialfachri.rukaloumkm.R
 
 class KontakFragment : Fragment(), View.OnClickListener {
@@ -21,6 +22,12 @@ class KontakFragment : Fragment(), View.OnClickListener {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_kontak, container, false)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val bottomNav = activity?.findViewById<BottomNavigationView>(R.id.nav_view)
+        bottomNav?.visibility = View.GONE
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -73,7 +80,7 @@ class KontakFragment : Fragment(), View.OnClickListener {
             }
 
             R.id.btn_facebook -> {
-                val facebookProfile = "https://www.facebook.com/hermhmd8"
+                val facebookProfile = "http://instagram.com/rukalo.id"
                 val bukaFacebook = Intent(Intent.ACTION_VIEW, Uri.parse(facebookProfile))
                 startActivity(bukaFacebook)
             }

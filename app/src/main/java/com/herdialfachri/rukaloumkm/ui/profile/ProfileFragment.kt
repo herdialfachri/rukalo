@@ -56,17 +56,11 @@ class ProfileFragment : Fragment() {
         return view
     }
 
-    //    fungsi agar ketika pindah ke fragment lain bottom nav di hide
+//        fungsi agar ketika pindah ke fragment lain bottom nav di hide
     override fun onResume() {
         super.onResume()
         val bottomNav = activity?.findViewById<BottomNavigationView>(R.id.nav_view)
         bottomNav?.visibility = View.VISIBLE
-    }
-
-    override fun onPause() {
-        super.onPause()
-        val bottomNav = activity?.findViewById<BottomNavigationView>(R.id.nav_view)
-        bottomNav?.visibility = View.GONE
     }
 
     //    fungsi berpindah dari setiap button ke fragment lain

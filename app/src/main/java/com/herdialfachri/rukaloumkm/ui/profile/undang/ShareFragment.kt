@@ -9,6 +9,7 @@ import android.widget.Button
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.herdialfachri.rukaloumkm.R
 
 class ShareFragment : Fragment(), View.OnClickListener {
@@ -27,6 +28,12 @@ class ShareFragment : Fragment(), View.OnClickListener {
         btnShare.setOnClickListener(this)
 
         return view
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val bottomNav = activity?.findViewById<BottomNavigationView>(R.id.nav_view)
+        bottomNav?.visibility = View.GONE
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
