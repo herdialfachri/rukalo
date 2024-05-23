@@ -7,32 +7,42 @@
     tools:context=".ui.dashboard.DashboardFragment"
     android:theme="@style/CustomTextViewStyle">
 
-    <androidx.appcompat.widget.SearchView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:id="@+id/search"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_resep"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:background="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:iconifiedByDefault="false"
-        app:searchHintIcon="@null"
-        app:queryHint="Cari apa?"
-        android:focusable="false"
-        app:closeIcon="@drawable/baseline_close_24"
-        app:searchIcon="@drawable/search"
-        android:paddingStart="0dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:background="@drawable/searchview_bg"
+        android:focusable="false"
+        android:paddingStart="0dp"
+        app:closeIcon="@drawable/baseline_close_24"
+        app:iconifiedByDefault="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:queryHint="Cari apa?"
+        app:searchHintIcon="@null"
+        app:searchIcon="@drawable/search"
         tools:ignore="RtlSymmetry" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_resep" />
 </androidx.constraintlayout.widget.ConstraintLayout>

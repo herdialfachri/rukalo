@@ -16,6 +16,8 @@ class DetailActivity2 : AppCompatActivity() {
         // Temukan Toolbar dan atur Navigation Click Listener
         val toolbar: Toolbar = findViewById(R.id.toolbar_detailfood)
         setSupportActionBar(toolbar)
+        supportActionBar?.title = "Resep"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         toolbar.setNavigationOnClickListener {
             finish() // Tutup aktivitas dan kembali ke fragment sebelumnya
         }
@@ -24,16 +26,20 @@ class DetailActivity2 : AppCompatActivity() {
         val getData = intent.getParcelableExtra<FoodItem>("android")
         if (getData != null) {
             val detailTitle: TextView = findViewById(R.id.detailTitle)
-            val detailDesc: TextView = findViewById(R.id.detailDesc)
             val detailImage: ImageView = findViewById(R.id.detailImage)
             val waktuMasak: TextView = findViewById(R.id.waktu_masak)
             val ratingRasa: TextView = findViewById(R.id.cita_rasa)
+            val detailDesc: TextView = findViewById(R.id.detailmakanan)
+            val bahanBaku: TextView = findViewById(R.id.detailbahanbaku)
+            val resepMasak : TextView = findViewById(R.id.detailresep)
 
             detailTitle.text = getData.dataTitle
-            detailDesc.text = getData.dataDesc
-            detailImage.setImageResource(getData.dataDetailImage)
+            detailImage.setImageResource(getData.dataImage)
             waktuMasak.text = getData.dataWaktu
             ratingRasa.text = getData.dataRating
+            detailDesc.text = getData.dataDesc
+            bahanBaku.text = getData.dataBahan
+            resepMasak.text = getData.dataResep
         }
     }
 }

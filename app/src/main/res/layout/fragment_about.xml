@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
+    android:scrollbars="none"
     tools:context=".ui.profile.tentang.AboutFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -25,17 +26,17 @@
             app:navigationIcon="@drawable/baseline_arrow_back_24"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-    <ImageView
-        android:id="@+id/iv_logo_about"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="32dp"
-        android:src="@drawable/rukalo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_about"
-        android:contentDescription="@string/gambar_logo_rukalo" />
+        <ImageView
+            android:id="@+id/iv_logo_about"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="60dp"
+            android:contentDescription="@string/gambar_logo_rukalo"
+            android:src="@drawable/rukalo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_about" />
 
     <TextView
         android:id="@+id/tv_nama_logo_about"

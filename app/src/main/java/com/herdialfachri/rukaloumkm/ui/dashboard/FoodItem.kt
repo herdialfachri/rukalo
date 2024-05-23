@@ -7,15 +7,17 @@ data class FoodItem(
     var dataImage: Int,
     var dataTitle: String,
     var dataDesc: String,
-    var dataDetailImage: Int,
     var dataWaktu: String,
-    var dataRating: String
+    var dataRating: String,
+    var dataBahan : String,
+    var dataResep : String
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString()!!,
         parcel.readString()!!,
-        parcel.readInt(),
+        parcel.readString()!!,
+        parcel.readString()!!,
         parcel.readString()!!,
         parcel.readString()!!
     )
@@ -24,9 +26,10 @@ data class FoodItem(
         parcel.writeInt(dataImage)
         parcel.writeString(dataTitle)
         parcel.writeString(dataDesc)
-        parcel.writeInt(dataDetailImage)
         parcel.writeString(dataWaktu)
         parcel.writeString(dataRating)
+        parcel.writeString(dataBahan)
+        parcel.writeString(dataResep)
     }
 
     override fun describeContents(): Int {

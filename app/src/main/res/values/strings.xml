@@ -115,4 +115,7 @@
     <string name="menit">30 Menit</string>
     <string name="rating">4.9 dari 5.0</string>
     <string name="instagram">Instagram</string>
+    <string name="bahan_baku">Bahan Baku</string>
+    <string name="nama_aplikasi">Nama Aplikasi</string>
+    <string name="cara_memasak">Cara Memasak</string>
 </resources>
