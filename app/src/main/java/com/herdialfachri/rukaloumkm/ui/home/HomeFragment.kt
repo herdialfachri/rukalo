@@ -5,13 +5,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.auth.FirebaseAuth
 import com.herdialfachri.rukaloumkm.R
 import com.herdialfachri.rukaloumkm.data.DataClass
 import com.herdialfachri.rukaloumkm.data.MyAdapter
@@ -20,7 +19,6 @@ class HomeFragment : Fragment() {
 
     private lateinit var fab: FloatingActionButton
     private lateinit var recyclerView: RecyclerView
-    private lateinit var searchView: SearchView
     private lateinit var adapter: MyAdapter
     private val viewModel: HomeViewModel by viewModels()
     private var dataList = mutableListOf<DataClass>()
@@ -38,8 +36,6 @@ class HomeFragment : Fragment() {
 
         recyclerView = view.findViewById(R.id.recyclerView)
         fab = view.findViewById(R.id.fab)
-        searchView = view.findViewById(R.id.search)
-        searchView.clearFocus()
 
         val gridLayoutManager = GridLayoutManager(requireContext(), 1)
         recyclerView.layoutManager = gridLayoutManager
@@ -47,21 +43,36 @@ class HomeFragment : Fragment() {
         setupRecyclerView()
         setupViewModel()
 
+        // Amati status autentikasi pengguna
+        val auth = FirebaseAuth.getInstance()
+        val currentUser = auth.currentUser
+        if (currentUser != null) {
+            // User sudah login, tampilkan FAB
+            fab.visibility = View.VISIBLE
+        } else {
+            // User belum login, sembunyikan FAB
+            fab.visibility = View.GONE
+        }
+
+        // Set listener untuk perubahan status autentikasi
+        auth.addAuthStateListener { firebaseAuth ->
+            val user = firebaseAuth.currentUser
+            if (user != null) {
+                // User sudah login, tampilkan FAB
+                fab.visibility = View.VISIBLE
+            } else {
+                // User belum login, sembunyikan FAB
+                fab.visibility = View.GONE
+            }
+        }
+
         fab.setOnClickListener {
+            // Tindakan ketika FAB diklik
             val intent = Intent(requireContext(), UploadActivity::class.java)
             startActivity(intent)
         }
 
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                return false
-            }
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-                searchList(newText)
-                return true
-            }
-        })
+        // Setup SearchView dan listener lainnya
     }
 
     override fun onResume() {
@@ -82,15 +93,9 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun searchList(text: String?) {
-        val searchList = mutableListOf<DataClass>()
-        text?.let {
-            for (dataClass in dataList) {
-                if (dataClass.dataTitle?.toLowerCase()?.contains(it.toLowerCase()) == true) {
-                    searchList.add(dataClass)
-                }
-            }
-        }
-        adapter.searchDataList(searchList)
+    override fun onDestroyView() {
+        super.onDestroyView()
+        // Pastikan untuk menghapus listener saat Fragment dihancurkan
+        FirebaseAuth.getInstance().removeAuthStateListener { /* listener */ }
     }
 }

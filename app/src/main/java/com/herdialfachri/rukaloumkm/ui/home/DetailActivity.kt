@@ -2,12 +2,15 @@ package com.herdialfachri.rukaloumkm.ui.home
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.github.clans.fab.FloatingActionButton
+import com.github.clans.fab.FloatingActionMenu
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.herdialfachri.rukaloumkm.MainActivity
@@ -21,6 +24,7 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var detailImage: ImageView
     private lateinit var deleteButton: FloatingActionButton
     private lateinit var editButton: FloatingActionButton
+    private lateinit var mainFab: FloatingActionMenu
     private var key: String = ""
     private var imageUrl: String = ""
 
@@ -34,6 +38,7 @@ class DetailActivity : AppCompatActivity() {
         deleteButton = findViewById(R.id.deleteButton)
         editButton = findViewById(R.id.editButton)
         detailLang = findViewById(R.id.detailLang)
+        mainFab = findViewById(R.id.mainFab)
 
         intent.extras?.let { bundle ->
             detailDesc.text = bundle.getString("Description")
@@ -42,6 +47,17 @@ class DetailActivity : AppCompatActivity() {
             key = bundle.getString("Key") ?: ""
             imageUrl = bundle.getString("Image") ?: ""
             Glide.with(this).load(imageUrl).into(detailImage)
+        }
+
+        // Amati status autentikasi pengguna
+        val auth = FirebaseAuth.getInstance()
+        val currentUser = auth.currentUser
+        if (currentUser == null) {
+            // User belum login, sembunyikan FloatingActionMenu
+            mainFab.visibility = View.GONE
+        } else {
+            // User sudah login, tampilkan FloatingActionMenu
+            mainFab.visibility = View.VISIBLE
         }
 
         deleteButton.setOnClickListener {
