@@ -16,11 +16,12 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar_detailfood"
             android:layout_width="match_parent"
+            app:titleMarginTop="16dp"
+            app:title="Resep"
             android:layout_height="wrap_content"
-            app:titleTextColor="@color/black"
-            app:navigationIcon="@drawable/baseline_arrow_back_24" />
+            app:titleTextColor="@color/white"
+            app:navigationIcon="@drawable/baseline_arrow_back_white_24" />
     </com.google.android.material.appbar.AppBarLayout>
-
 
     <ScrollView
         android:layout_width="match_parent"
@@ -42,7 +43,7 @@
                 android:text="@string/nama_makanan"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="28sp"
+                android:textSize="26sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@+id/cv_img_food"
                 app:layout_constraintStart_toStartOf="@+id/cv_img_food"
@@ -53,7 +54,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="12dp"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="5dp"
@@ -192,7 +193,8 @@
                     android:text="@string/deskripsi"
                     android:textAlignment="viewStart"
                     android:textColor="@color/black"
-                    android:textSize="15sp"
+                    android:letterSpacing="0.05"
+                    android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/deskripsimakanan" />
@@ -222,6 +224,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/bahanbaku">
+
                 <TextView
                     android:id="@+id/detailbahanbaku"
                     android:layout_width="match_parent"
@@ -232,8 +235,9 @@
                     android:layout_marginBottom="14dp"
                     android:text="@string/bahan_baku"
                     android:textAlignment="viewStart"
+                    android:letterSpacing="0.05"
                     android:textColor="@color/black"
-                    android:textSize="15sp"
+                    android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/bahanbaku" />
@@ -277,7 +281,8 @@
                     android:text="@string/resep"
                     android:textAlignment="viewStart"
                     android:textColor="@color/black"
-                    android:textSize="15sp"
+                    android:textSize="14sp"
+                    android:letterSpacing="0.05"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

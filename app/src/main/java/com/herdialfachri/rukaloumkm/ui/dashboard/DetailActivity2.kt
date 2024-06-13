@@ -15,9 +15,6 @@ class DetailActivity2 : AppCompatActivity() {
 
         // Temukan Toolbar dan atur Navigation Click Listener
         val toolbar: Toolbar = findViewById(R.id.toolbar_detailfood)
-        setSupportActionBar(toolbar)
-        supportActionBar?.title = "Resep"
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         toolbar.setNavigationOnClickListener {
             finish() // Tutup aktivitas dan kembali ke fragment sebelumnya
         }

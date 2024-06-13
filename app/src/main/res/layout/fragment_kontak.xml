@@ -27,17 +27,17 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <!--text contact-->
-    <TextView
-        android:id="@+id/tv_sosmed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/hubungi_kami"
-        android:textColor="@color/black"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_kontak" />
+        <TextView
+            android:id="@+id/tv_sosmed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/hubungi_kami"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_kontak" />
 
     <!--text sosmed-->
     <TextView
@@ -48,7 +48,7 @@
         android:layout_marginTop="24dp"
         android:text="@string/sosmed"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_whatsapp" />
 

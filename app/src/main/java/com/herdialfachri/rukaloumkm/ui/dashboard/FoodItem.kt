@@ -9,8 +9,8 @@ data class FoodItem(
     var dataDesc: String,
     var dataWaktu: String,
     var dataRating: String,
-    var dataBahan : String,
-    var dataResep : String
+    var dataBahan: String,
+    var dataResep: String
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),

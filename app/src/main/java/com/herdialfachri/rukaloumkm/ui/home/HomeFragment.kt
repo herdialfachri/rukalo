@@ -1,50 +1,96 @@
 package com.herdialfachri.rukaloumkm.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.herdialfachri.rukaloumkm.R
-import com.herdialfachri.rukaloumkm.databinding.FragmentHomeBinding
+import com.herdialfachri.rukaloumkm.data.DataClass
+import com.herdialfachri.rukaloumkm.data.MyAdapter
 
 class HomeFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    private lateinit var fab: FloatingActionButton
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var searchView: SearchView
+    private lateinit var adapter: MyAdapter
+    private val viewModel: HomeViewModel by viewModels()
+    private var dataList = mutableListOf<DataClass>()
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+    ): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_home, container, false)
+    }
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        recyclerView = view.findViewById(R.id.recyclerView)
+        fab = view.findViewById(R.id.fab)
+        searchView = view.findViewById(R.id.search)
+        searchView.clearFocus()
+
+        val gridLayoutManager = GridLayoutManager(requireContext(), 1)
+        recyclerView.layoutManager = gridLayoutManager
+
+        setupRecyclerView()
+        setupViewModel()
+
+        fab.setOnClickListener {
+            val intent = Intent(requireContext(), UploadActivity::class.java)
+            startActivity(intent)
         }
-        return root
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                searchList(newText)
+                return true
+            }
+        })
     }
 
-    override fun onStart() {
-        super.onStart()
-        val bottomNav = activity?.findViewById<BottomNavigationView>(R.id.nav_view)
-        bottomNav?.visibility = View.VISIBLE
+    override fun onResume() {
+        super.onResume()
+        viewModel.refreshData() // Memastikan data diperbarui saat fragment kembali aktif
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    private fun setupRecyclerView() {
+        adapter = MyAdapter(requireContext(), dataList)
+        recyclerView.adapter = adapter
+    }
+
+    private fun setupViewModel() {
+        viewModel.products.observe(viewLifecycleOwner) { products ->
+            dataList.clear()
+            dataList.addAll(products)
+            adapter.notifyDataSetChanged()
+        }
+    }
+
+    private fun searchList(text: String?) {
+        val searchList = mutableListOf<DataClass>()
+        text?.let {
+            for (dataClass in dataList) {
+                if (dataClass.dataTitle?.toLowerCase()?.contains(it.toLowerCase()) == true) {
+                    searchList.add(dataClass)
+                }
+            }
+        }
+        adapter.searchDataList(searchList)
     }
 }

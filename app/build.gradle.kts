@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("kotlin-parcelize")
+    id("kotlin-kapt")
     id("com.google.gms.google-services")
 }
 
@@ -44,7 +45,10 @@ dependencies {
 
 //    library untuk mengambil gambar lewat link
     implementation (libs.glide)
+    implementation(libs.firebase.storage.ktx)
+    implementation(libs.firebase.auth)
     implementation(libs.firebase.database)
+    kapt (libs.compiler.v4142)
     annotationProcessor (libs.compiler.v4110)
 
     implementation(libs.androidx.navigation.fragment.ktx)
@@ -60,10 +64,12 @@ dependencies {
     implementation(libs.androidx.activity)
 
 //    library firebase
-    implementation(libs.firebase.auth.ktx)
-    implementation(libs.firebase.auth)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation (libs.glide.v4142)
+    annotationProcessor (libs.compiler.v4142)
+    implementation (libs.fab)
 }
