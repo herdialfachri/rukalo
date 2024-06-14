@@ -91,6 +91,14 @@ class UploadActivity : AppCompatActivity() {
         }
     }
 
+    private fun sanitizePath(path: String): String {
+        return path.replace(".", "")
+            .replace("#", "")
+            .replace("$", "")
+            .replace("[", "")
+            .replace("]", "")
+    }
+
     private fun uploadData() {
         val title = uploadTopic.text.toString()
         val desc = uploadDesc.text.toString()
@@ -99,8 +107,9 @@ class UploadActivity : AppCompatActivity() {
         val dataClass = DataClass(title, desc, lang, imageURL)
 
         val currentDate = DateFormat.getDateTimeInstance().format(Calendar.getInstance().time)
+        val sanitizedDate = sanitizePath(currentDate)
 
-        FirebaseDatabase.getInstance().getReference("Product").child(currentDate)
+        FirebaseDatabase.getInstance().getReference("Product").child(sanitizedDate)
             .setValue(dataClass).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show()
