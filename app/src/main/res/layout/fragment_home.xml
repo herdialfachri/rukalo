@@ -1,45 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scrollbars="none"
     tools:context=".ui.home.HomeFragment">
 
-    <androidx.appcompat.widget.SearchView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        android:id="@+id/search"
-        app:iconifiedByDefault="false"
-        app:searchHintIcon="@null"
-        app:queryHint="Search..."
-        android:focusable="false"
-        app:closeIcon="@drawable/baseline_account_circle_24"
-        app:searchIcon="@drawable/baseline_account_circle_24"
-        android:background="@drawable/lavender_border"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/search"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/recyclerView"
-        android:scrollbars="vertical"/>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="100dp"
-        android:backgroundTint="@color/blue"
-        app:tint = "@color/white"
-        android:src="@drawable/baseline_add_reaction_24" />
+        android:layout_height="wrap_content">
 
-</RelativeLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/lavender_border"
+                android:focusable="false"
+                android:theme="@style/CustomTextViewStyle"
+                app:closeIcon="@drawable/baseline_close_24"
+                app:iconifiedByDefault="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:queryHint="Mau makan apa?"
+                app:searchHintIcon="@null"
+                app:searchIcon="@drawable/search" />
+
+            <TextView
+                android:id="@+id/tvInfoHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/inter"
+                android:text="@string/informasi"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/vpHome"
+                app:layout_constraintTop_toBottomOf="@+id/search" />
+
+            <ViewFlipper
+                android:id="@+id/vpHome"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:autoStart="true"
+                android:flipInterval="5000"
+                android:inAnimation="@anim/slide_right"
+                android:outAnimation="@anim/slide_left"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvInfoHome">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/gambar_slider"
+                    android:src="@drawable/bander" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/gambar_slider"
+                    android:src="@drawable/bander2" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/gambar_slider"
+                    android:src="@drawable/imageslider3" />
+
+            </ViewFlipper>
+
+            <TextView
+                android:id="@+id/tvBtnAddHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/inter"
+                android:text="@string/produk_unggulan"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/vpHome"
+                app:layout_constraintTop_toBottomOf="@+id/vpHome" />
+
+            <TextView
+                android:id="@+id/tvProduk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter"
+                android:text="@string/find_product"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/tvBtnAddHome"
+                app:layout_constraintTop_toBottomOf="@+id/tvBtnAddHome" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/search"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="70dp"
+                android:nestedScrollingEnabled="false"
+                android:scrollbars="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvProduk" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="@color/blue"
+                android:src="@drawable/baseline_add_24"
+                app:fabSize="mini"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/vpHome"
+                app:tint="@color/white"
+                tools:ignore="ContentDescription" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+</ScrollView>

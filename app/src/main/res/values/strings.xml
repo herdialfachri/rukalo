@@ -118,4 +118,11 @@
     <string name="bahan_baku">Bahan Baku</string>
     <string name="nama_aplikasi">Nama Aplikasi</string>
     <string name="cara_memasak">Cara Memasak</string>
+    <string name="tambah_data">Tambah Data</string>
+    <string name="informasi">Informasi</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="price">Price</string>
+    <string name="produk_unggulan">Produk Unggulan</string>
+    <string name="find_product">Temukan produk kesukaanmu kamu disini</string>
 </resources>

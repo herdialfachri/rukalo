@@ -9,7 +9,7 @@
         android:id="@+id/navigation_home"
         android:name="com.herdialfachri.rukaloumkm.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home">
+        tools:layout="@layout/fragment_homee">
         <action
             android:id="@+id/action_navigation_home_to_navigation_resep"
             app:destination="@id/navigation_resep"

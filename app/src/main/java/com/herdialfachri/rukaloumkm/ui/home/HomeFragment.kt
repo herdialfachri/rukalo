@@ -42,7 +42,7 @@ class HomeFragment : Fragment() {
         fab = view.findViewById(R.id.fab)
         searchView = view.findViewById(R.id.search)
 
-        val gridLayoutManager = GridLayoutManager(requireContext(), 1)
+        val gridLayoutManager = GridLayoutManager(requireContext(), 2)
         recyclerView.layoutManager = gridLayoutManager
 
         setupRecyclerView()
