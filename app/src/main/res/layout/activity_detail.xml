@@ -39,7 +39,7 @@
         android:textSize="18sp"
         android:textColor="@color/blue"/>
 
-    <TextView
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -48,7 +48,7 @@
         android:layout_gravity="center"
         android:id="@+id/detailDesc"
         android:textSize="18sp"
-        android:textColor="@color/blue"/>
+        android:textColor="@color/white"/>
 
     <RelativeLayout
         android:layout_width="match_parent"

@@ -1,8 +1,10 @@
 package com.herdialfachri.rukaloumkm.ui.home
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -16,9 +18,9 @@ import com.google.firebase.storage.FirebaseStorage
 import com.herdialfachri.rukaloumkm.MainActivity
 import com.herdialfachri.rukaloumkm.R
 
-class DetailActivity : AppCompatActivity() {
+class DetailActivity : AppCompatActivity(), View.OnClickListener {
 
-    private lateinit var detailDesc: TextView
+    private lateinit var detailDesc: Button
     private lateinit var detailTitle: TextView
     private lateinit var detailLang: TextView
     private lateinit var detailImage: ImageView
@@ -27,6 +29,7 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var mainFab: FloatingActionMenu
     private var key: String = ""
     private var imageUrl: String = ""
+    private var whatsappNumber: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,11 +44,11 @@ class DetailActivity : AppCompatActivity() {
         mainFab = findViewById(R.id.mainFab)
 
         intent.extras?.let { bundle ->
-            detailDesc.text = bundle.getString("Description")
             detailTitle.text = bundle.getString("Title")
             detailLang.text = bundle.getString("Language")
             key = bundle.getString("Key") ?: ""
             imageUrl = bundle.getString("Image") ?: ""
+            whatsappNumber = bundle.getString("Description") ?: ""
             Glide.with(this).load(imageUrl).into(detailImage)
         }
 
@@ -82,6 +85,20 @@ class DetailActivity : AppCompatActivity() {
                 putExtra("Key", key)
             }
             startActivity(intent)
+        }
+
+        // Set listener untuk tombol detailDesc
+        detailDesc.setOnClickListener(this)
+    }
+
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.detailDesc -> {
+                val message = "Assalamualaikum, saya ingin memesan"
+                val url = "https://api.whatsapp.com/send?phone=$whatsappNumber&text=$message"
+                val dialWhatsappIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                startActivity(dialWhatsappIntent)
+            }
         }
     }
 }

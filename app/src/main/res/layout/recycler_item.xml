@@ -43,7 +43,6 @@
             android:id="@+id/recPriority"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_marginTop="8dp"
             android:layout_toEndOf="@id/recTitle"
             android:fontFamily="@font/inter"
             android:text="@string/price"
@@ -52,23 +51,23 @@
             android:textSize="13sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/recTitle"
-            app:layout_constraintTop_toBottomOf="@+id/recDesc" />
-
-        <TextView
-            android:id="@+id/recDesc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_toEndOf="@id/recImage"
-            android:fontFamily="@font/inter"
-            android:maxLines="1"
-            android:text="@string/description"
-            android:textColor="@color/black"
-            android:textSize="13sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recTitle" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/recDesc"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="8dp"-->
+<!--            android:layout_marginEnd="8dp"-->
+<!--            android:layout_toEndOf="@id/recImage"-->
+<!--            android:fontFamily="@font/inter"-->
+<!--            android:maxLines="1"-->
+<!--            android:text="@string/description"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="13sp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/recTitle" />-->
 
         <ImageView
             android:id="@+id/imgFav"

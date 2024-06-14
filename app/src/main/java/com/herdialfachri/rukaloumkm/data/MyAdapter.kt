@@ -26,7 +26,7 @@ class MyAdapter(private val context: Context, private var dataList: List<DataCla
 
         Glide.with(context).load(currentItem.dataImage).into(holder.recImage)
         holder.recTitle.text = currentItem.dataTitle
-        holder.recDesc.text = currentItem.dataDesc
+//        holder.recDesc.text = currentItem.dataDesc
         holder.recLang.text = currentItem.dataLang
 
         holder.recCard.setOnClickListener {
@@ -55,7 +55,7 @@ class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     val recImage: ImageView = itemView.findViewById(R.id.recImage)
     val recTitle: TextView = itemView.findViewById(R.id.recTitle)
-    val recDesc: TextView = itemView.findViewById(R.id.recDesc)
+//    val recDesc: TextView = itemView.findViewById(R.id.recDesc)
     val recLang: TextView = itemView.findViewById(R.id.recPriority)
     val recCard: CardView = itemView.findViewById(R.id.recCard)
 }
