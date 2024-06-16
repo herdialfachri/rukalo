@@ -5,5 +5,8 @@ data class DataClass(
     var dataDesc: String? = null,
     var dataLang: String? = null,
     var dataImage: String? = null,
+    var dataSeller: String? = null,
+    var dataProduct: String? = null,
+    var dataAddress: String? = null,
     var key: String? = null
 )

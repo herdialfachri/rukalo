@@ -23,10 +23,13 @@ import java.util.*
 class UploadActivity : AppCompatActivity() {
 
     private lateinit var uploadImage: ImageView
-    private lateinit var saveButton: Button
     private lateinit var uploadTopic: EditText
     private lateinit var uploadDesc: EditText
     private lateinit var uploadLang: EditText
+    private lateinit var uploadSeller: EditText
+    private lateinit var uploadProduct: EditText
+    private lateinit var uploadAlamat: EditText
+    private lateinit var saveButton: Button
     private var imageURL: String? = null
     private var uri: Uri? = null
 
@@ -35,9 +38,12 @@ class UploadActivity : AppCompatActivity() {
         setContentView(R.layout.activity_upload)
 
         uploadImage = findViewById(R.id.uploadImage)
-        uploadDesc = findViewById(R.id.uploadDesc)
         uploadTopic = findViewById(R.id.uploadTopic)
+        uploadDesc = findViewById(R.id.uploadDesc)
         uploadLang = findViewById(R.id.uploadLang)
+        uploadSeller = findViewById(R.id.uploadSeller)
+        uploadProduct = findViewById(R.id.uploadProductDesc)
+        uploadAlamat = findViewById(R.id.uploadAlamat)
         saveButton = findViewById(R.id.saveButton)
 
         val activityResultLauncher: ActivityResultLauncher<Intent> = registerForActivityResult(
@@ -97,14 +103,20 @@ class UploadActivity : AppCompatActivity() {
             .replace("$", "")
             .replace("[", "")
             .replace("]", "")
+            .replace("<", "")
+            .replace(">", "")
+            .replace("?", "")
     }
 
     private fun uploadData() {
         val title = uploadTopic.text.toString()
         val desc = uploadDesc.text.toString()
         val lang = uploadLang.text.toString()
+        val seller = uploadSeller.text.toString()
+        val product = uploadProduct.text.toString()
+        val address = uploadAlamat.text.toString()
 
-        val dataClass = DataClass(title, desc, lang, imageURL)
+        val dataClass = DataClass(title, desc, lang, imageURL, seller, product, address)
 
         val currentDate = DateFormat.getDateTimeInstance().format(Calendar.getInstance().time)
         val sanitizedDate = sanitizePath(currentDate)
