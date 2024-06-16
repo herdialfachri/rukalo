@@ -24,6 +24,9 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var detailTitle: TextView
     private lateinit var detailLang: TextView
     private lateinit var detailImage: ImageView
+    private lateinit var detailSeller: TextView
+    private lateinit var detailProduk: TextView
+    private lateinit var detailAlamat: TextView
     private lateinit var deleteButton: FloatingActionButton
     private lateinit var editButton: FloatingActionButton
     private lateinit var mainFab: FloatingActionMenu
@@ -36,19 +39,26 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_detail)
 
         detailDesc = findViewById(R.id.detailDesc)
-        detailImage = findViewById(R.id.detailImage)
         detailTitle = findViewById(R.id.detailTitle)
+        detailLang = findViewById(R.id.detailLang)
+        detailImage = findViewById(R.id.detailImage)
+        detailSeller = findViewById(R.id.detailSeller)
+        detailProduk = findViewById(R.id.detailProduk)
+        detailAlamat = findViewById(R.id.detailAlamat)
         deleteButton = findViewById(R.id.deleteButton)
         editButton = findViewById(R.id.editButton)
-        detailLang = findViewById(R.id.detailLang)
+
         mainFab = findViewById(R.id.mainFab)
 
         intent.extras?.let { bundle ->
+            whatsappNumber = bundle.getString("Description") ?: ""
             detailTitle.text = bundle.getString("Title")
             detailLang.text = bundle.getString("Language")
             key = bundle.getString("Key") ?: ""
             imageUrl = bundle.getString("Image") ?: ""
-            whatsappNumber = bundle.getString("Description") ?: ""
+            detailSeller.text = bundle.getString("Seller")
+            detailProduk.text = bundle.getString("Produk")
+            detailAlamat.text = bundle.getString("Alamat")
             Glide.with(this).load(imageUrl).into(detailImage)
         }
 
@@ -78,10 +88,13 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
 
         editButton.setOnClickListener {
             val intent = Intent(this, UpdateActivity::class.java).apply {
-                putExtra("Title", detailTitle.text.toString())
                 putExtra("Description", detailDesc.text.toString())
+                putExtra("Title", detailTitle.text.toString())
                 putExtra("Language", detailLang.text.toString())
                 putExtra("Image", imageUrl)
+                putExtra("Seller", detailSeller.text.toString())
+                putExtra("Produk", detailProduk.text.toString())
+                putExtra("Alamat", detailAlamat.text.toString())
                 putExtra("Key", key)
             }
             startActivity(intent)

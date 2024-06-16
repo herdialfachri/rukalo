@@ -36,6 +36,9 @@ class MyAdapter(private val context: Context, private var dataList: List<DataCla
                 putExtra("Title", currentItem.dataTitle)
                 putExtra("Key", currentItem.key)
                 putExtra("Language", currentItem.dataLang)
+                putExtra("Seller", currentItem.dataSeller)
+                putExtra("Produk", currentItem.dataProduct)
+                putExtra("Alamat", currentItem.dataAddress)
             }
             context.startActivity(intent)
         }
