@@ -84,7 +84,6 @@
             android:layout_marginStart="8dp"
             android:text="@string/hubungi_desa_palasari_girang"
             android:textSize="16sp"
-            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/iv_hubungi_desa"
             app:layout_constraintStart_toEndOf="@+id/iv_hubungi_desa"
             app:layout_constraintTop_toTopOf="@+id/iv_hubungi_desa" />
@@ -121,7 +120,6 @@
             android:layout_marginStart="8dp"
             android:text="@string/cara_menggunakan_aplikasi"
             android:textSize="16sp"
-            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/iv_tentang_aplikasi"
             app:layout_constraintStart_toEndOf="@+id/iv_tentang_aplikasi"
             app:layout_constraintTop_toTopOf="@+id/iv_tentang_aplikasi" />
@@ -158,7 +156,6 @@
             android:layout_marginStart="8dp"
             android:text="@string/hak_cipta_aplikasi"
             android:textSize="16sp"
-            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/iv_hak"
             app:layout_constraintStart_toEndOf="@+id/iv_hak"
             app:layout_constraintTop_toTopOf="@+id/iv_hak" />
@@ -208,7 +205,6 @@
             android:layout_marginStart="8dp"
             android:text="@string/undang_teman"
             android:textSize="16sp"
-            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/iv_undang"
             app:layout_constraintStart_toEndOf="@+id/iv_undang"
             app:layout_constraintTop_toTopOf="@+id/iv_undang" />
@@ -234,7 +230,6 @@
             android:layout_marginStart="16dp"
             android:text="@string/tentang_aplikasi_rukalo"
             android:textSize="16sp"
-            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/btn_tentang_aplikasi"
             app:layout_constraintStart_toStartOf="@+id/btn_tentang_aplikasi"
             app:layout_constraintTop_toTopOf="@+id/btn_tentang_aplikasi" />

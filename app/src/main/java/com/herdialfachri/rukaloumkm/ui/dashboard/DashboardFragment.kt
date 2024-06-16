@@ -8,9 +8,13 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.herdialfachri.rukaloumkm.R
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.util.Locale
 
 class DashboardFragment : Fragment() {
@@ -25,7 +29,11 @@ class DashboardFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_dashboard, container, false)
+        return inflater.inflate(R.layout.fragment_dashboard, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         recyclerView = view.findViewById(R.id.recyclerView)
         searchView = view.findViewById(R.id.search)
@@ -36,9 +44,9 @@ class DashboardFragment : Fragment() {
         recyclerView.adapter = myAdapter
 
         viewModel.foodItems.observe(viewLifecycleOwner) { data ->
-            searchList.clear()
-            searchList.addAll(data)
-            myAdapter.notifyDataSetChanged()
+            lifecycleScope.launch {
+                updateData(data)
+            }
         }
 
         searchView.clearFocus()
@@ -49,7 +57,9 @@ class DashboardFragment : Fragment() {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                filterList(newText)
+                lifecycleScope.launch {
+                    filterList(newText)
+                }
                 return false
             }
         })
@@ -59,18 +69,30 @@ class DashboardFragment : Fragment() {
             intent.putExtra("android", it)
             startActivity(intent)
         }
-
-        return view
     }
 
-    private fun filterList(query: String?) {
+    private suspend fun updateData(data: List<FoodItem>) {
+        withContext(Dispatchers.Default) {
+            searchList.clear()
+            searchList.addAll(data)
+        }
+        withContext(Dispatchers.Main) {
+            myAdapter.notifyDataSetChanged()
+        }
+    }
+
+    private suspend fun filterList(query: String?) {
         val searchText = query?.lowercase(Locale.getDefault()) ?: ""
-        val filteredList = viewModel.foodItems.value?.filter {
-            it.dataTitle.lowercase(Locale.getDefault()).contains(searchText)
-        } ?: emptyList()
-        searchList.clear()
-        searchList.addAll(filteredList)
-        recyclerView.adapter?.notifyDataSetChanged()
+        val filteredList = withContext(Dispatchers.Default) {
+            viewModel.foodItems.value?.filter {
+                it.dataTitle.lowercase(Locale.getDefault()).contains(searchText)
+            } ?: emptyList()
+        }
+        withContext(Dispatchers.Main) {
+            searchList.clear()
+            searchList.addAll(filteredList)
+            recyclerView.adapter?.notifyDataSetChanged()
+        }
     }
 
     override fun onPause() {

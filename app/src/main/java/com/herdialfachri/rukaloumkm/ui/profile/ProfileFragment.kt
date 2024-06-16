@@ -2,8 +2,6 @@ package com.herdialfachri.rukaloumkm.ui.profile
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,12 +10,14 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.herdialfachri.rukaloumkm.MainActivity
 import com.herdialfachri.rukaloumkm.R
 import com.herdialfachri.rukaloumkm.databinding.FragmentProfileBinding
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class ProfileFragment : Fragment() {
 
@@ -33,12 +33,16 @@ class ProfileFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
-        val view = binding.root
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         val logoutButton = view.findViewById<Button>(R.id.btn_logout)
         val loadingKeluar = view.findViewById<ProgressBar>(R.id.loadingKeluar)
 
-        viewModel.isUserLoggedIn.observe(viewLifecycleOwner, Observer { isLoggedIn ->
+        viewModel.isUserLoggedIn.observe(viewLifecycleOwner) { isLoggedIn ->
             if (isLoggedIn) {
                 binding.btnMasuk.visibility = View.GONE
                 logoutButton.visibility = View.VISIBLE
@@ -46,35 +50,27 @@ class ProfileFragment : Fragment() {
                 binding.btnMasuk.visibility = View.VISIBLE
                 logoutButton.visibility = View.GONE
             }
-        })
+        }
 
         logoutButton.setOnClickListener {
             loadingKeluar.visibility = View.VISIBLE
-            Handler(Looper.getMainLooper()).postDelayed({
+            lifecycleScope.launch {
+                delay(1300) // 1.3 detik
                 viewModel.logout()
-            }, 1300) // 1.3 detik
+            }
         }
 
-        viewModel.logoutEvent.observe(viewLifecycleOwner, Observer {
+        viewModel.logoutEvent.observe(viewLifecycleOwner) {
             val intent = Intent(activity, MainActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
-        })
+        }
 
-        return view
-    }
-
-    //        fungsi agar ketika pindah ke fragment lain bottom nav di hide
-    override fun onResume() {
-        super.onResume()
+        // Fungsi agar ketika pindah ke fragment lain bottom nav di hide
         val bottomNav = activity?.findViewById<BottomNavigationView>(R.id.nav_view)
         bottomNav?.visibility = View.VISIBLE
-    }
 
-    //    fungsi berpindah dari setiap button ke fragment lain
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
+        // Fungsi berpindah dari setiap button ke fragment lain
         binding.btnTentangAplikasi.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_navigation_profil_to_aboutFragment)
         )

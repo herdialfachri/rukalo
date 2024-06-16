@@ -9,21 +9,15 @@
         android:id="@+id/navigation_home"
         android:name="com.herdialfachri.rukaloumkm.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_homee">
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_navigation_home_to_navigation_resep"
-            app:destination="@id/navigation_resep"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+            app:destination="@id/navigation_resep" />
         <action
             android:id="@+id/action_navigation_home_to_navigation_profil"
             app:destination="@id/navigation_profil"
             app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim" />
     </fragment>
 
     <fragment
@@ -38,6 +32,9 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_navigation_resep_to_navigation_home"
+            app:destination="@id/navigation_home" />
     </fragment>
 
     <fragment
@@ -69,22 +66,37 @@
         <action
             android:id="@+id/action_navigation_profil_to_loginActivity"
             app:destination="@id/loginActivity" />
+        <action
+            android:id="@+id/action_navigation_profil_to_navigation_home"
+            app:destination="@id/navigation_home" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.herdialfachri.rukaloumkm.ui.profile.tentang.AboutFragment"
         android:label="fragment_about"
-        tools:layout="@layout/fragment_about" />
+        tools:layout="@layout/fragment_about" >
+        <action
+            android:id="@+id/action_aboutFragment_to_navigation_profil"
+            app:destination="@id/navigation_profil" />
+    </fragment>
     <fragment
         android:id="@+id/kontakFragment"
         android:name="com.herdialfachri.rukaloumkm.ui.profile.kontak.KontakFragment"
         android:label="fragment_kontak"
-        tools:layout="@layout/fragment_kontak" />
+        tools:layout="@layout/fragment_kontak" >
+        <action
+            android:id="@+id/action_kontakFragment_to_navigation_profil"
+            app:destination="@id/navigation_profil" />
+    </fragment>
     <fragment
         android:id="@+id/shareFragment"
         android:name="com.herdialfachri.rukaloumkm.ui.profile.undang.ShareFragment"
         android:label="fragment_share"
-        tools:layout="@layout/fragment_share" />
+        tools:layout="@layout/fragment_share" >
+        <action
+            android:id="@+id/action_shareFragment_to_navigation_profil"
+            app:destination="@id/navigation_profil" />
+    </fragment>
     <activity
         android:id="@+id/loginActivity"
         android:name="com.herdialfachri.rukaloumkm.login.LoginActivity"

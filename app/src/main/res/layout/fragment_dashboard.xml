@@ -7,42 +7,45 @@
     tools:context=".ui.dashboard.DashboardFragment"
     android:theme="@style/CustomTextViewStyle">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_resep"
-        android:layout_width="match_parent"
-        android:layout_height="68dp"
-        android:background="@color/blue"
+    <ImageView
+        android:id="@+id/ivResepMakan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/resepbg"
+        android:adjustViewBounds="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        tools:ignore="ContentDescription" />
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/search"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@drawable/searchview_bg"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/lavender_border"
         android:focusable="false"
-        android:paddingStart="0dp"
+        android:theme="@style/CustomTextViewStyle"
         app:closeIcon="@drawable/baseline_close_24"
         app:iconifiedByDefault="false"
+        app:layout_constraintBottom_toBottomOf="@+id/ivResepMakan"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:queryHint="Cari apa?"
+        app:queryHint="Mau masak apa?"
         app:searchHintIcon="@null"
-        app:searchIcon="@drawable/search"
-        tools:ignore="RtlSymmetry" />
+        app:searchIcon="@drawable/search" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_resep" />
+        app:layout_constraintTop_toBottomOf="@+id/ivResepMakan" />
 </androidx.constraintlayout.widget.ConstraintLayout>
